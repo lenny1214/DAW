@@ -10,15 +10,15 @@ jubilado a partir de 67*/
 $edad=25;
 
 if($edad < 3){
-    echo "¡¡Eres un  bebé!!"
+    echo "¡¡Eres un  bebé!!";
 }else if($edad >= 3 && $edad <= 12){
-    echo "Eres un niño"
+    echo "Eres un niño";
 }else if($edad>=13 && $edad<=17){
-    echo "Eres adolescente"
+    echo "Eres adolescente";
 }else if($edad>=18 && $edad<=66){
-    echo "Eres adulto"
+    echo "Eres adulto";
 }else if($edad>=67){
-    echo "Jubileta"
+    echo "Jubileta";
 }
 
 
