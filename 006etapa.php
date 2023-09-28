@@ -11,13 +11,13 @@ $edad=25;
 
 if($edad<3){
     echo "¡¡Eres un  bebé!!"
-}else if($edad>3&&$edad<12){
+}else if($edad>=3 && $edad<=12){
     echo "Eres un niño"
-}else if($edad>13&&$edad<17){
+}else if($edad>=13 && $edad<=17){
     echo "Eres adolescente"
-}else if($edad>18&&$edad<66){
+}else if($edad>=18 && $edad<=66){
     echo "Eres adulto"
-}else if($edad>67){
+}else if($edad>=67){
     echo "Jubileta"
 }
 
