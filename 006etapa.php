@@ -9,9 +9,9 @@ jubilado a partir de 67*/
 <?php
 $edad=25;
 
-if($edad<3){
+if($edad < 3){
     echo "¡¡Eres un  bebé!!"
-}else if($edad>=3 && $edad<=12){
+}else if($edad >= 3 && $edad <= 12){
     echo "Eres un niño"
 }else if($edad>=13 && $edad<=17){
     echo "Eres adolescente"
