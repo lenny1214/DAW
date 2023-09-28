@@ -3,8 +3,12 @@
 con un par de l√≠neas su propósito y mediante código demuestra su uso.*/
 
 
+<br>
+<br>
+<br>
+
 <?php
-$opcion = "b";
+$opcion = "b"; //En este caso hemos seleccionado la opción B. $opcion se compara con los valores a,b,c, y al tener le valos b es el que muestra.
 
 $resultado = match ($opcion) {
     "a" => "Opción A seleccionada",
@@ -13,7 +17,7 @@ $resultado = match ($opcion) {
     default => "Opción no válida",
 };
 
-echo $resultado; // Imprime "Opción B seleccionada"
+echo $resultado; 
 
 
 ?>
