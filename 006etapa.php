@@ -5,9 +5,12 @@ adolescente entre 13 y 17 años
 adulto entre 18 y 66
 jubilado a partir de 67*/
 
+<br>
+<br>
+
 
 <?php
-$edad=25;
+$edad=67;
 
 if($edad < 3){
     echo "¡¡Eres un  bebé!!";
