@@ -26,7 +26,7 @@ inicio y fin*/
             if($inicio<=$fin){
                 for ($i = $inicio; $i <= $fin; $i++) {
                     if ($i % 2 == 0) {
-                        echo "$i";
+                        echo "<br>$i<br>";
                     }
                 }
             } else {
