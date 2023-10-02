@@ -13,7 +13,7 @@ $mayor=max($array);
 $menor=min($array)
 $media = array_sum($array) / count($array);
 
-echo "Array aleatorio: " . implode(", ", $array) . "<br>";
+echo "Array aleatorio: " . implode(", ", $array) . "<br>"; /*Aquí implementamos los puntos para ir concatenando resultados*/
 echo "El mayor número es: " . $mayor . "<br>";
 echo "El menor número es: " . $menor . "<br>";
 echo "La media es: " . $media . "<br>";
