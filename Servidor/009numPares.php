@@ -5,7 +5,7 @@
 
 <?php
 for($ind=0;$ind<=50;$ind+=2){
-    echo "$ind";
+    echo "<br>$ind<br>";
 }
 
 
