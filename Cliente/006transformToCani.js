@@ -9,8 +9,23 @@ Para ello, hay que alternar el uso de MAYÚSCULAS y
 minúsculas, sustituir la letra C por la K y añadir
 tres letras H al final.*/
 
+function transformarACani(cadena) {
+    let resultado = '';
+    let alternarMayusculas = true;
 
+    for (let i = 0; i < cadena.length; i++) {
+        let caracter = cadena.charAt(i);
 
+        if (caracter === 'c' || caracter === 'C') {
+            resultado += 'K';
+        } else {
+            resultado += alternarMayusculas ? caracter.toUpperCase() : caracter.toLowerCase();
+        }
+
+        alternarMayusculas = !alternarMayusculas;
+    }
+
+}
 
 
 
