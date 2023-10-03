@@ -12,11 +12,21 @@ Cree una página web que solicite x y n, y luego muestre el resultado de
 pow(x,n).
 Nota: La función solo debe admitir valores naturales de n: enteros desde 1.*/
 
-function pow(x,n){
-    
+
+let num;
+let expo;
+
+num=prompt('Introduzca un número que quieras elevar');
+expo=prompt('Introduzca un exponente al que elevar');
+
+function elevar(num,expo){
+    let resultado = Math.pow(num,expo);
+
+    return resultado;
+
+
 }
-
-
-
+let resultadoReal=elevar(num,expo);
+alert (resultadoReal);
 
 
