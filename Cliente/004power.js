@@ -17,15 +17,23 @@ let num;
 let expo;
 
 num=prompt('Introduzca un número que quieras elevar');
+
 expo=prompt('Introduzca un exponente al que elevar');
 
-function elevar(num,expo){
-    let resultado = Math.pow(num,expo);
-
-    return resultado;
-
-
+if(num<0||expo<0){
+    alert('Los valores introducidos no pueden ser negativos');
+}else{
+    function elevar(num,expo){
+        let resultado = Math.pow(num,expo);
+    
+        return resultado;
+    
+    
+    }
 }
+
+
+
 let resultadoReal=elevar(num,expo);
 alert (resultadoReal);
 
