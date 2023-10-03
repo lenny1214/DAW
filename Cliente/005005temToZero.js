@@ -11,3 +11,49 @@ considerará que son los segundos desde donde comenzará la cuenta atrás.
 temporizador(77);      // le pasamos 77 segundos
 
 temporizador(2,50);   // le pasamos 2 minutos y 50 segundos*/
+
+
+
+let min;
+let sec;
+let tempo;
+
+min=prompt('Introduzca un minuto');
+
+sec=prompt('Introduzca un segundo');
+
+function temporizador(min,sec) {
+if (min==0 && sec>0) {
+
+
+
+
+}else if (sec==0 && min>0) {
+
+
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
