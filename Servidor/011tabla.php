@@ -7,12 +7,12 @@
     <h1>Tabla de Multiplicar</h1>
 
     <?
-    // Verificar si se ha proporcionado un número en la URL
+    // Comprobar que se ha recibido el número por url
     if (isset($_GET['numero'])) {
-        // Obtener el número de la URL y asegurarse de que sea un número entero
+        // Obtenemos el número de la url, lo determinamos como entero
         $numero = intval($_GET['numero']);
 
-        // Comprobar si el número es válido (mayor que 0)
+        // Comprobar si el número es válido, que sea mayor que 0
         if ($numero > 0) {
             echo "<h2>Tabla de multiplicar del $numero</h2>";
             echo "<table border='1'>";
