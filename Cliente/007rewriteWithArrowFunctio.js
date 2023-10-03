@@ -15,7 +15,7 @@ ask(
 );*/
 
 
-const ask = (question, yes, no) => {
+const ask = (question, yes, no) => { //Es const, ya que no se pueden modificar
     if (confirm(question)) yes();
     else no();
   };
