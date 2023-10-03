@@ -12,6 +12,7 @@ rellenadas con los valores de las coordenadas de cada celda.*/
     <h1>Tabla Generada</h1>
 
     <?php
+    //El requested method lo que hacemos es verificar si se ha pulsado el boton de enviar el form
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $filas = intval($_POST["filas"]);
         $columnas = intval($_POST["columnas"]);

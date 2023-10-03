@@ -7,13 +7,13 @@ con valores M o F (por ejemplo ["M", "M", "F", "M", ...]).
 
 
 <?php
-
+//En este for lo que hacemos es generar un array de 100 elementos de manera aleatoria
     $generar = [];
     for($ind=0;$ind<100;$ind++){
         $genera=rand(0,1)? 'M': 'F';
         $generar[]=$genera;
     }
-
+    //Nos va a contar cuantas veces se repite el sexo M y el F
     $contar=['M'=>0, 'F'=>0]
     foreach ($generar as $genera){
         if($genero === 'M')

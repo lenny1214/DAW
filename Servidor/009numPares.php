@@ -3,7 +3,7 @@
 
 
 
-<?php
+<?php //Creamos un array de 50 numeros enteros.
 for($ind=0;$ind<=50;$ind+=2){
     echo "<br>$ind<br>";
 }

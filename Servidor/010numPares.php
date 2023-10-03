@@ -22,7 +22,7 @@ inicio y fin*/
                 $inicio=intval($_GET['inicio']);
                 $fin=intval($_GET['fin']);
             }
-
+            //Si no se ha seleccionado ningún valor, se le asigna el valor por def
             if($inicio<=$fin){
                 for ($i = $inicio; $i <= $fin; $i++) {
                     if ($i % 2 == 0) {

@@ -9,6 +9,7 @@ Este ejercicio se basa en el juego de la Bola 8 mágica.*/
 
 
 <?php
+//Creamos el array de respuestas aleatorias
     $respuestas = array (
         "Sí",
         "No",

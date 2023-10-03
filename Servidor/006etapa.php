@@ -10,9 +10,9 @@ jubilado a partir de 67*/
 
 
 <?php
-$edad=67;
+$edad=67; //Definimos la edad
 
-if($edad < 3){
+if($edad < 3){ //Hacemos el condicional para ver dependiendo de la edad la frase que devuelve
     echo "¡¡Eres un  bebé!!";
 }else if($edad >= 3 && $edad <= 12){
     echo "Eres un niño";

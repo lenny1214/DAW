@@ -12,9 +12,9 @@ previamente crees un formulario, puedes probar el ejercicio vía URL:
 
 <?php
 
-$edad_actual = 30;  
+$edad_actual = 30;  //Definimos edad
 
-$anio_actual = date("Y");
+$anio_actual = date("Y"); //Con esta función le pasamos el año actual
 
 $edad_en_10_anios = $edad_actual + 10;
 $anio_en_10_anios = $anio_actual + 10;
