@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="012CreateUserAccount.js"></script>
+    <title>Formulario de Creación de Cuenta</title>
+    <script defer src="012CreateUserAccount.js"></script>
 </head>
 <body>
+    <h1>Crear Cuenta</h1>
+    <form id="formularioCuenta">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required><br>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" required><br>
+
+        <label for="telefono">Número de Teléfono:</label>
+        <input type="tel" id="telefono"><br>
+
+        <button type="submit">Crear Cuenta</button>
+    </form>
+
     
 </body>
 </html>
