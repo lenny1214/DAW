@@ -11,12 +11,13 @@ el sueldo es superior a 3333€) → debePagarImpuestos(): bool*/
 class Empleado {
   
 
-    public function __construct(string $nombre, string $apellidos, float $sueldo, bool $impuestos){
+    public function __construct(
+      protected  string $nombre, 
+      protected string $apellidos, 
+      protected float $sueldo, 
+      protected  bool $impuestos){
 
-        $this ->nombre=$nombre;
-        $this ->apellidos=$apellidos;
-        $this ->sueldo=$sueldo;
-        $this ->impuestos=$impuestos;
+    
 
 
     }
