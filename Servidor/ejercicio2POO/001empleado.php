@@ -17,9 +17,6 @@ class Empleado {
       protected float $sueldo, 
       protected  bool $impuestos){
 
-    
-
-
     }
 
     public function getNombre(){
