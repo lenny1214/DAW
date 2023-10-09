@@ -15,8 +15,8 @@ class Empleado {
     public function __construct(
       protected  string $nombre="", 
       protected string $apellidos="",  
-      protected float $sueldo=3333, 
-      protected  bool $impuestos=true){
+      protected float $sueldo=1000, 
+      protected  bool $impuestos=false){
 
     }
 
@@ -72,7 +72,7 @@ class Empleado {
 
     $empleado = new Empleado('Lenny', 'Fernández Vigil-Escalera');
     echo "nombre completo: ". $empleado->getNombreCompleto(). "<br>";
-    echo "sueldo". $empleado->getSueldoTope(). "<br>";
+    echo "sueldo: ". $empleado->getSueldoTope(). "<br>";
     echo ($empleado->debePagarImpuestos())?  "no debe pagar impuestos: ": "Debe pagar impuestos";
 
     $empleado->anyadirTelefono(123456789);
