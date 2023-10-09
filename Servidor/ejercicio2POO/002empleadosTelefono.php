@@ -5,10 +5,12 @@ public function anyadirTelefono(int $telefono) : void → Añade un teléfono al
 public function listarTelefonos(): string → Muestra los teléfonos separados por comas
 public function vaciarTelefonos(): void → Elimina todos los teléfonos*/
 
+
 <?php
 
-class EmpleadoTeléfono{
-    private array $teléfonos = [];
+class Empleado {
+  
+    private array $telefonos = [];
 
     public function __construct(
       protected  string $nombre, 
@@ -16,18 +18,6 @@ class EmpleadoTeléfono{
       protected float $sueldo, 
       protected  bool $impuestos){
 
-    }
-
-    public function anyadirTelefono(int $telefono) :void{
-        $this->teléfonos[] = $telefono;
-    }
-
-    public function listarTelefonos() : string{
-        return implode(", ", $this->teléfonos);
-    }
-
-    public function vaciarTelefonos() : void{
-        $this->teléfonos = [];
     }
 
     public function getNombre(){
@@ -75,8 +65,21 @@ class EmpleadoTeléfono{
 
     }
 
-
+    public function anyadirTelefono(int $telefono) : void {
+        $this->telefonos[] = $telefono;
     }
+
+
+        public function listarTelefonos(): string {
+        return implode(", ", $this->telefonos);
+    }
+
+    public function vaciarTelefonos(): void {
+        $this->telefonos = [];
+    }
+
+
+}
 
     $empleado = new Empleado('Lenny', 'Fernández Vigil-Escalera', 10000, true);
     echo "nombre completo: ". $empleado->getNombreCompleto(). "<br>";
@@ -88,14 +91,19 @@ class EmpleadoTeléfono{
         echo "debe pagar impuestos: ". $empleado->debePagarImpuestos(). "<br>";
     }
 
-    $empleadoTelefono->anyadirTelefono(123456789);
-    $empleadoTelefono->anyadirTelefono(987654321);
+    $empleado->anyadirTelefono(123456789);
+    $empleado->anyadirTelefono(987654321);
+    echo "Teléfonos: ". $empleado->listarTelefonos(). "<br>";
 
-    echo "teléfonos: ". $empleadoTelefono->listarTelefonos(). "<
-    $empleadoTelefono->vaciarTelefonos(). "<br>";
-    echo "Teléfonos después de vaciar". $empleadoTelefono->listarTelefonos(). "<br>";
+    $empleado->vaciarTelefonos();
+    echo "teléfonos vacíos: ". $empleado->listarTelefonos(). "<br>";
 
-  
+
+
+
+
+
+
 
 
 
