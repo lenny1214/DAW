@@ -6,7 +6,7 @@ y los teléfonos.*/
 
 <?php
 
-class Empleado {
+class Empleado extends Persona{
   
     private array $telefonos = [];
 
@@ -20,6 +20,8 @@ class Empleado {
       protected  bool $impuestos=true){
 
     }
+
+    parent ::__construct($nombre, $apellidos); //Va a heredar el constructor de la clase padre, el cual solo tiene nombre y apellidos.
 
     public function getNombre(){
         return $this->nombre;
