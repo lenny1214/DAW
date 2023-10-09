@@ -7,8 +7,8 @@ public function vaciarTelefonos(): void → Elimina todos los teléfonos*/
 
 <?php
 
-class EmpleadoTeléfono extends Empleado{
-  
+class EmpleadoTeléfono{
+    private array $teléfonos = [];
 
     public function __construct(
       protected  string $nombre, 
@@ -16,6 +16,18 @@ class EmpleadoTeléfono extends Empleado{
       protected float $sueldo, 
       protected  bool $impuestos){
 
+    }
+
+    public function anyadirTelefono(int $telefono) :void{
+        $this->teléfonos[] = $telefono;
+    }
+
+    public function listarTelefonos() : string{
+        return implode(", ", $this->teléfonos);
+    }
+
+    public function vaciarTelefonos() : void{
+        $this->teléfonos = [];
     }
 
     public function getNombre(){
@@ -75,6 +87,13 @@ class EmpleadoTeléfono extends Empleado{
     }else{
         echo "debe pagar impuestos: ". $empleado->debePagarImpuestos(). "<br>";
     }
+
+    $empleadoTelefono->anyadirTelefono(123456789);
+    $empleadoTelefono->anyadirTelefono(987654321);
+
+    echo "teléfonos: ". $empleadoTelefono->listarTelefonos(). "<
+    $empleadoTelefono->vaciarTelefonos(). "<br>";
+    echo "Teléfonos después de vaciar". $empleadoTelefono->listarTelefonos(). "<br>";
 
   
 
