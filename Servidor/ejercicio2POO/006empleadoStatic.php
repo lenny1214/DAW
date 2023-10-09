@@ -17,7 +17,7 @@ class Empleado {
     public function __construct(
       protected  string $nombre="", 
       protected string $apellidos="",  
-      protected float $sueldo=3333, 
+      protected float $sueldo=1000, 
       protected  bool $impuestos=true){
 
     }
@@ -69,6 +69,14 @@ class Empleado {
         $this->telefonos = [];
     }
 
+    public static function toHtml(Empleado $emp): string {
+        $html = "<p>Nombre: ". $emp->getNombreCompleto(). "</p>";
+        $html.= "<p>Sueldo: ". $emp->getSueldo(). "</p>";
+        $html.= ($emp->debePagarImpuestos())?  "no debe pagar impuestos: ": "Debe pagar impuestos";
+        $html.= "<p>Teléfonos: ". $emp->listarTelefonos(). "</p>";
+        return $html;
+    }
+
 
 }
 
@@ -84,7 +92,7 @@ class Empleado {
     $empleado->vaciarTelefonos();
     echo "teléfonos vacíos: ". $empleado->listarTelefonos(). "<br>";
 
-
+    
 
 
 
