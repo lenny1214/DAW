@@ -72,11 +72,14 @@ class Empleado extends Persona{
         $this->telefonos = [];
     }
 
-    public static function toHtml(Empleado $emp): string {
-        $html = "<p>Nombre: ". $emp->getNombreCompleto(). "</p>";
-        $html.= "<p>Sueldo: ". $emp->getSueldoTope(). "</p>";
-        $html.= ($emp->debePagarImpuestos())?  "no debe pagar impuestos: ": "Debe pagar impuestos";
-        $html.= "<p>Teléfonos: ". $emp->listarTelefonos(). "</p>";
+    public static function toHtml(Persona $per): string {
+        if(instanceof Empleado){
+    
+        $html = "<p>Nombre: ". $per->getNombreCompleto(). "</p>";
+        $html.= "<p>Sueldo: ". $per->getSueldoTope(). "</p>";
+        $html.= ($per->debePagarImpuestos())?  "no debe pagar impuestos: ": "Debe pagar impuestos";
+        $html.= "<p>Teléfonos: ". $per->listarTelefonos(). "</p>";
+        }
         return $html;
     }
 
