@@ -1,8 +1,8 @@
 <?php
 
     class Persona{
-       protected $string nombre;
-       protected $string apellidos;
+       protected string $nombre;
+       protected string $apellidos;
        
        
 
