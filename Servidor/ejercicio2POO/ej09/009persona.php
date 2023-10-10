@@ -23,6 +23,10 @@
                 return $this->nombre.' '.$this->apellidos;
             }
 
+            public function getEdad():string{
+                return $this->edad;
+            }
+
             public static function toHtml(Persona $per): string {
                 $html = "<p>Nombre: ". $per->getNombreCompleto(). "</p>";
                

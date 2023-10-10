@@ -54,9 +54,11 @@ class Empleado extends Persona{
 
    
     public function debePagarImpuestos(): bool {
-
-       return $this->sueldo < self::$sueldoTope;
-
+        if (parent:: getEdad() >= 21 && $this->getSueldo() >= self::$sueldoTope) {
+       return "Tienes que pagar impuesto";
+    }else{
+        return "No tienes que pagar impuesto";
+    }
     }
 
     public function anyadirTelefono(int $telefono) : void {
