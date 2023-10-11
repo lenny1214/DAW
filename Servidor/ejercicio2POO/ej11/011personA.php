@@ -27,7 +27,10 @@
                 return $this->edad;
             }
 
-            public static function toHtml(Persona $per): string {
+            public static abstract function toHtml(Persona $p): string;
+        
+
+            public static function __toString(Persona $per): string {
                 $html = "<p>Nombre Completo: ". $per->getNombreCompleto(). "</p>";
                 $html .= "<p>Edad: " . $this->getEdad() . "</p>";
                 return $html;

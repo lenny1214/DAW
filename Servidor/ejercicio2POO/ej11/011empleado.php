@@ -71,7 +71,7 @@ class Empleado extends Persona{
     public function vaciarTelefonos(): void {
         $this->telefonos = [];
     }
-    public function toHtml(): string {
+    public function __toString(): string {
         $html = "<p>Nombre completo: " . $this->getNombreCompleto() . "</p>";
         $html .= "<p>Sueldo: " . $this->getSueldoTope() . "</p>";
         $html .= "<p>Debe pagar impuestos: " . $this->debePagarImpuestos() . "</p>";
@@ -86,10 +86,10 @@ $persona = new Persona('Lenny', 'Fernández Vigil-Escalera', 25);
 $empleado = new Empleado('Juan', 'López', 3000, true);
 
 echo "Información detallada de la Persona: <br>";
-echo $persona->toHtml() . "<br>";
+echo $persona->__toString() . "<br>";
 
 echo "Información detallada del Empleado: <br>";
-echo $empleado->toHtml() . "<br>";
+echo $empleado->__toString() . "<br>";
 
 
 
