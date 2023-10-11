@@ -12,10 +12,17 @@ class Trabajador extends Persona{
 private static float $sueldoTope = 3333;
 
 public function __construct(
-    private array $telefonos = [];
+    private array $telefonos = [],
+    int $edad,
+    string $nombre="",
+    string $apellidos="" ,
+    protected float $sueldo=1000,
+      bool $impuestos=true;
     ){
-
+    parent::__construct($nombre, $apellidos,$edad);
     }
+
+
 
     public static function getSueldoTope (): float {
 

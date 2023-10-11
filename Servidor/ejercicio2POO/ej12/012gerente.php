@@ -5,7 +5,7 @@ public class Gerente extends Trabajador{
 
     public function __construct(
        public string $sueldo=5000 ){
-  
+  parent::trabajador($edad, $nombre, $apellidos, $sueldo, true);
       }
 
       public static function getSueldoTope (): float {
