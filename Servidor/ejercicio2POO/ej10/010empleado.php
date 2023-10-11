@@ -73,37 +73,25 @@ class Empleado extends Persona{
     public function vaciarTelefonos(): void {
         $this->telefonos = [];
     }
-
-    public static function toHtml(Persona $per): string {
-        if(instanceof Empleado){
-    
-        $html = "<p>Nombre: ". $per->getNombreCompleto(). "</p>";
-        $html.= "<p>Sueldo: ". $per->getSueldoTope(). "</p>";
-        $html.= ($per->debePagarImpuestos())?  "no debe pagar impuestos: ": "Debe pagar impuestos";
-        $html.= "<p>Teléfonos: ". $per->listarTelefonos(). "</p>";
-        }
+    public function toHtml(): string {
+        $html = "<p>Nombre completo: " . $this->getNombreCompleto() . "</p>";
+        $html .= "<p>Sueldo: " . $this->getSueldoTope() . "</p>";
+        $html .= "<p>Debe pagar impuestos: " . $this->debePagarImpuestos() . "</p>";
+        $html .= "<p>Teléfonos: " . $this->listarTelefonos() . "</p>";
         return $html;
     }
 
 
 }
 
-    $empleado = new Empleado('Lenny', 'Fernández Vigil-Escalera');
-    echo "nombre completo: ". $empleado->getNombreCompleto(). "<br>";
-    echo "sueldo". $empleado->getSueldoTope(). "<br>";
-    echo ($empleado->debePagarImpuestos())?  "no debe pagar impuestos: ": "Debe pagar impuestos";
+$persona = new Persona('Lenny', 'Fernández Vigil-Escalera', 25);
+$empleado = new Empleado('Juan', 'López', 3000, true);
 
-    $empleado->anyadirTelefono(123456789);
-    $empleado->anyadirTelefono(987654321);
-    echo "Teléfonos: ". $empleado->listarTelefonos(). "<br>";
+echo "Información detallada de la Persona: <br>";
+echo $persona->toHtml() . "<br>";
 
-    $empleado->vaciarTelefonos();
-    echo "teléfonos vacíos: ". $empleado->listarTelefonos(). "<br>";
-
-    
-    echo $empleado->toHtml($empleado). "<br>";
-
-
+echo "Información detallada del Empleado: <br>";
+echo $empleado->toHtml() . "<br>";
 
 
 

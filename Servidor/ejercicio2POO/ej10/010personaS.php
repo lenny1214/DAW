@@ -28,8 +28,8 @@
             }
 
             public static function toHtml(Persona $per): string {
-                $html = "<p>Nombre: ". $per->getNombreCompleto(). "</p>";
-               
+                $html = "<p>Nombre Completo: ". $per->getNombreCompleto(). "</p>";
+                $html .= "<p>Edad: " . $this->getEdad() . "</p>";
                 return $html;
             }
             
