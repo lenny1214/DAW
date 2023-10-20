@@ -1,13 +1,37 @@
 "use strict";
 
-/*006calculator.js/.html: Crea un objeto calculator con tres métodos:
-read() pide dos valores y los almacena como propiedades de objeto con nombres a y b.
-sum() devuelve la suma de los valores almacenados.
-mul() multiplica los valores almacenados y devuelve el resultado.
-let calculator = {
-  // ... tu código ...
-};
-calculator.read();
-alert( calculator.sum() );
-alert( calculator.mul() );
+/*005makeUser.js/.html: Aquí la función makeUser devuelve un objeto. ¿Cuál es el resultado de acceder a su 
+atributo ref? ¿Por qué?
+
+function makeUser() {
+  return {
+    name: "John",
+    ref: this
+  };
+}
+let user = makeUser();
+alert( user.ref.name ); // ¿Cuál es el resultado?
+
+
+
+El resultado de acceder a su atributo ref es que no hace referencia en sí mismo al objeto, si no al contexto en el que se ejecuta la función.
+
+
+
+
+
+
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
