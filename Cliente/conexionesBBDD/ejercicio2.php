@@ -22,11 +22,9 @@
     $db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
 
     // establecer y realizar consulta. guardamos en variable.
-    $consulta = "SELECT *
-    FROM persona
-    WHERE tipo = 'alumno'
-    AND fecha_nacimiento = (SELECT MAX(fecha_nacimiento) FROM persona WHERE tipo = 'alumno')";
-    
+   
+    $consulta="SELECT ";
+
 
     $resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
     
@@ -45,11 +43,14 @@
     echo "<th>fecha_nacimiento</th>";
     echo "<th>sexo</th>";
     echo "<th>tipo</th>";
+
+    echo "</tr>";
+    
     // Bucle while que recorre cada registro y muestra cada campo en la tabla.
     while ($columna = mysqli_fetch_array( $resultado ))
     {
         echo "<tr>";
-        echo "<td>" . $columna['id'] . "</td><td>" . $columna['nif'] . "</td><td>". $columna['nombre'] . "</td><td>" . $columna['apellido1'] . "</td><td>" .$columna['apellido2'] . "</td><td>" . $columna['ciudad'] . "</td><td>" . $columna['direccion'] . "</td><td>" . $columna['teléfono'] . "</td><td>" .$columna['fecha_nacimiento'] . "</td><td>" . $columna['sexo'] . "</td><td>" . $columna['tipo'] . "</td>" ;
+        echo "<td>" . $columna['nombre'] . "</td><td>" . $columna['fecha_nacimiento'] . "</td>";
         echo "</tr>";
     }
     
