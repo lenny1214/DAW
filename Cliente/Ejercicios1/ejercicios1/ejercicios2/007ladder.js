@@ -27,3 +27,25 @@ Modifica el código de “arriba” up, “abajo” down y “mostrar peldaño�
 ladder.up().up().down().showStep().down().showStep(); // shows 1 then 0
 Tal enfoque es ampliamente usado entre las librerías JavaScript.
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
