@@ -49,13 +49,20 @@ alert (disney);
 
 //Obtener los personajes de la película de "Peter Pan"; y mostrarlos uno a uno
 
+for(let i=0;i<disney.length;i<maxlength){
+    let cons=disney[i];
+   if(cons==="Peter Pan"){
+    alert(cons.nombre);
 
+    }
 
-
+}
 
 //Encontrar el índice de Campanilla.
-
-
+let campanilla;
+campanilla=disney.findIndexOf(function(value)
+    {return value.nombre==campanilla
+});
 
 
 
