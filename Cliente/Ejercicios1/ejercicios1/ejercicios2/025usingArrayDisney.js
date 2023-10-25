@@ -67,22 +67,6 @@ campanilla=disney.findIndexOf(function(value)
 
 
 
-//Buscar al cocodrilo.
-
-
-
-
-
-
-//Escribe la función shuffle(array) que baraje (reordene de forma aleatoria) 
-
-
-
-
-
-
-//los elementos del array.
-
 
 
 
