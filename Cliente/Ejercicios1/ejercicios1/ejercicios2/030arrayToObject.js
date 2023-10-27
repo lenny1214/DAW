@@ -65,20 +65,3 @@ if (posicionCP !==0){
 }else{
     console.log("Cold Play no se encuentra en nuestro array");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
