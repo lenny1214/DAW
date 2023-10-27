@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Nombres</title>
+</head>
+<body>
+    <ul id="lista">
+        <!-- Aquí se generará la lista -->
+    </ul>
+
+    <script>
+        let lista = [
+            { id: "5", href: "https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Arrays" },
+            { id: "4", href: "https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Arrays" },
+            { id: "3", href: "https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Arrays" },
+            { id: "2", href: "https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Arrays" },
+        ];
+
+        // Obtener el elemento ul donde se agregará la lista
+        const ul = document.getElementById("lista");
+
+        // Recorrer el array y crear elementos li para cada elemento
+        for (let i = 0; i < lista.length; i++) {
+            const item = lista[i];
+            const li = document.createElement("li");
+            li.textContent = `ID: ${item.id}, href: ${item.href}`;
+            ul.appendChild(li);
+        }
+    </script>
+</body>
+</html>
