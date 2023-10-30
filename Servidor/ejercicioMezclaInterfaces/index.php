@@ -17,10 +17,11 @@
         </ul>
     </nav>
 
+    <section>
     <div id="Inicio">
         <h1>Bienvenido a nuestra página de inicio</h1>
         <p>¡Aquí puedes encontrar información sobre nuestros barcos y servicios!</p>
-        <img src="/Servidor/ejercicioMezclaInterfaces/img/imagen" alt="Descripción de la imagen">
+        <img src="img/images.png" alt="Mi gente estamo en japon">
     </div>
 
     <div id="Barcos">
@@ -31,12 +32,12 @@
 
     <div id="Nosotros">
     </div>
+</secton>
     </header>
 
 
 
     <?php 
-    echo '<p> HOLA </p>'; 
     // Ejemplo de conexión a base de datos MySQL con PHP.
 	
 	// Datos de la base de datos
@@ -53,6 +54,7 @@
 	// establecer y realizar consulta. guardamos en variable.
 	
     $consulta= "SELECT DISTINCT PAIS FROM CLASES WHERE TIPO='ACORAZADO' AND PAIS IN(SELECT PAIS FROM CLASES WHERE TIPO='CRUCERO')";
+
 	$resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 	echo "<table border='1'";
     echo "<tr><th>PAIS</th></tr>";
@@ -63,16 +65,16 @@
     }
 	// Motrar el resultado de los registro de la base de datos
 	// Encabezado de la tabla
-	/*echo "<table border='2'>";
+	echo "<table border='2'>";
 	echo "<tr>";
 	echo "<th>Tipo de Barco</th>";
 	echo "<th>Desplazamiento</th>";
     echo "<th>Número de cañones</th>";
 
-	echo "</tr>";*/
+	echo "</tr>";
 	
 	// Bucle while que recorre cada registro y muestra cada campo en la tabla.
-	while ($columna = mysqli_fetch_array( $resultado ))
+	while ($fila = mysqli_fetch_array( $resultado ))
 	{
 		echo "<tr>";
 		echo "<td>" . $columna['TIPO'] . "</td><td>" . $columna['NRO_CANIONES'] . "</td><td>" . $columna['NRO_CANIONES'] . "</td>";
@@ -84,29 +86,23 @@
 	// cerrar conexión de base de datos
 	//mysqli_close( $conexion );?>
 
-    <h1>Tabla de Barcos</h1>
-    <table>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <td>Velero</td>
-            <td>$20,000</td>
-            <td>Gama Básica</td>
-        </tr>
-        <tr>
-            <td>Lancha rápida</td>
-            <td>$35,000</td>
-            <td>Gama Intermedia</td>
-        </tr>
-        <tr>
-            <td>Yate de lujo</td>
-            <td>$150,000</td>
-            <td>Gama de Lujo</td>
-        </tr>
-    </table>
+  <section>
+    <div id="inicio">
+        <h1>Inicio</h1>
+        <p>Esto es texto de barcos</p>
+        <img src = "img/images.png" alt="foto2">
+      </section>
+
+
+<?php
+
+
+
+
+
+
+?>
+
 
 
 
