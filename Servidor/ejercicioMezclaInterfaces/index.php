@@ -20,7 +20,7 @@
     <div id="Inicio">
         <h1>Bienvenido a nuestra página de inicio</h1>
         <p>¡Aquí puedes encontrar información sobre nuestros barcos y servicios!</p>
-        <img src="/Servidor/ejercicioMezclaInterfaces/img/barcos.jpeg" alt="Descripción de la imagen">
+        <img src="/Servidor/ejercicioMezclaInterfaces/img/imagen" alt="Descripción de la imagen">
     </div>
 
     <div id="Barcos">
@@ -33,12 +33,63 @@
     </div>
     </header>
 
+
+
+    <?php 
+    echo '<p> HOLA </p>'; 
+    // Ejemplo de conexión a base de datos MySQL con PHP.
+	
+	// Datos de la base de datos
+	$usuario = "root";
+	$password = "";
+	$servidor = "localhost";
+	$basededatos = "bbdd_barcos";
+	// creación de la conexión a la base de datos con mysql_connect()
+	$conexion = mysqli_connect( $servidor, $usuario, "" ) or die ("No se ha podido conectar al servidor de Base de datos");
+	
+	// Selección del a base de datos a utilizar
+	$db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
+
+	// establecer y realizar consulta. guardamos en variable.
+	
+    $consulta= "SELECT DISTINCT PAIS FROM CLASES WHERE TIPO='ACORAZADO' AND PAIS IN(SELECT PAIS FROM CLASES WHERE TIPO='CRUCERO')";
+	$resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+	echo "<table border='1'";
+    echo "<tr><th>PAIS</th></tr>";
+    if ($resultado){
+        while($fila=mysqli_fetch_assoc($resultado)){
+            echo "<tr><th>" . $fila['PAIS'] . "</tr></tr>";
+        }
+    }
+	// Motrar el resultado de los registro de la base de datos
+	// Encabezado de la tabla
+	/*echo "<table border='2'>";
+	echo "<tr>";
+	echo "<th>Tipo de Barco</th>";
+	echo "<th>Desplazamiento</th>";
+    echo "<th>Número de cañones</th>";
+
+	echo "</tr>";*/
+	
+	// Bucle while que recorre cada registro y muestra cada campo en la tabla.
+	while ($columna = mysqli_fetch_array( $resultado ))
+	{
+		echo "<tr>";
+		echo "<td>" . $columna['TIPO'] . "</td><td>" . $columna['NRO_CANIONES'] . "</td><td>" . $columna['NRO_CANIONES'] . "</td>";
+		echo "</tr>";
+	}
+	
+	echo "</table>"; // Fin de la tabla
+
+	// cerrar conexión de base de datos
+	//mysqli_close( $conexion );?>
+
     <h1>Tabla de Barcos</h1>
     <table>
         <tr>
-            <th>Tipo de Barco</th>
-            <th>Precio</th>
-            <th>Gama</th>
+            <th></th>
+            <th></th>
+            <th></th>
         </tr>
         <tr>
             <td>Velero</td>
@@ -56,49 +107,6 @@
             <td>Gama de Lujo</td>
         </tr>
     </table>
-
-    <?php 
-    echo '<p> HOLA </p>'; 
-    // Ejemplo de conexión a base de datos MySQL con PHP.
-	
-	// Datos de la base de datos
-	$usuario = "root";
-	$password = "";
-	$servidor = "localhost";
-	$basededatos = "paises";
-	
-	// creación de la conexión a la base de datos con mysql_connect()
-	$conexion = mysqli_connect( $servidor, $usuario, "" ) or die ("No se ha podido conectar al servidor de Base de datos");
-	
-	// Selección del a base de datos a utilizar
-	$db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
-
-	// establecer y realizar consulta. guardamos en variable.
-	$consulta = "SELECT * FROM tabla";
-	$resultado = mysqli_query( $conexion, $consulta ) or die ( "Algo ha ido mal en la consulta a la base de datos");
-	
-	// Motrar el resultado de los registro de la base de datos
-	// Encabezado de la tabla
-	echo "<table border='2'>";
-	echo "<tr>";
-	echo "<th>Nombre</th>";
-	echo "<th>Precio</th>";
-	echo "</tr>";
-	
-	// Bucle while que recorre cada registro y muestra cada campo en la tabla.
-	while ($columna = mysqli_fetch_array( $resultado ))
-	{
-		echo "<tr>";
-		echo "<td>" . $columna['cliente'] . "</td><td>" . $columna['precio'] . "</td>";
-		echo "</tr>";
-	}
-	
-	echo "</table>"; // Fin de la tabla
-
-	// cerrar conexión de base de datos
-	//mysqli_close( $conexion );?>
-
-
 
 
 
