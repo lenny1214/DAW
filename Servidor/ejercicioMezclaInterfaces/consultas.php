@@ -42,7 +42,7 @@ JOIN CLASES CL ON BC.CLASE
 GROUP BY B.NOMBRE_BATALLA, CL.PAIS)AS BatallasPorPais
 WHERE num_barcos >=3 ";
 
-$resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+$resultado = mysqli_query( $conexion, $consulta3 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 	echo "<table border='1'";
     echo "<tr><th>Nombre Batalla</th></tr>";
     if ($resultado){
