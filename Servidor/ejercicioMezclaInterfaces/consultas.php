@@ -59,4 +59,9 @@ GROUP BY PAIS)AS PaisesConMaxCaniones
 JOIN CLASES ON PaisesConMaxCanCaniones.PAIS AND PaisesConMaxCaniones.max_caniones=CLASES";
 
 $resultado=mysqli_query( $conexion, $consulta4) or die ("No funciona la conexión a la consulta");
+
+
+
+$consulta5="";
+  
     
