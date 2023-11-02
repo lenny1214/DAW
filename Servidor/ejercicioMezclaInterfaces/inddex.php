@@ -36,6 +36,15 @@
     </section>
 
     <section>
+        <h2>Listar el nombre del barco, desplazamiento y cantidad de cañones,
+de los barcos que participaron en la batalla de Guadalcanal.</h2>
+        <?php
+        include_once("consultas.php");
+        mostrarC1($resultado1);
+        ?>
+    </section>
+
+    <section>
         <h2>Encontrar aquellos países que dispongan tanto de acorazados como
 de cruceros.</h2>
         <?php
@@ -61,10 +70,20 @@ cañones.</h2>
         ?>
     </section>
 
+    <section>
+        <h2>Encontrar las batallas en las cuales participaron barcos de la clase
+kongo.</h2>
+        <?php
+        mostrarC5($resultado5);
+        ?>
+    </section>
+
+    
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
-                
+                <h2>Encontrar los países cuyos barcos tengan el mayor número de
+cañones.</h2>
                 <p>Barquitos es una empresa especializada en la historia y los barcos de guerra. Proporcionamos información detallada sobre los barcos y batallas más importantes a lo largo de la historia.</p>
             </div>
             <div class="footer-section contact">
