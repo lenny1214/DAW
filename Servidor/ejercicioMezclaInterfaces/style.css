@@ -1,45 +1,90 @@
-/* estilos.css */
-nav {
-    background-color: #333; /* Fondo de la barra de navegación */
-    color: #fff; /* Color del texto */
-    padding: 10px;
+/* Estilo para el header */
+header {
+    background-color: #1a75ff; /* Cambio de color a un tono azul profesional */
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
 }
 
-ul {
+/* Estilo para la barra de navegación */
+nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
-li {
+nav li {
     display: inline;
     margin-right: 20px;
 }
 
-a {
+nav a {
     text-decoration: none;
     color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
-table {
-    width: 50%;
-    border-collapse: collapse;
+nav a:hover {
+    color: #ff9900;
 }
 
-table, th, td {
-    border: 1px solid #ccc;
+/* Estilo para la sección principal del header */
+header .header-content {
+    padding: 20px 0;
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
+
+
+/* Estilo para el texto en verde oscuro militar */
+header h1 {
+    font-size: 36px;
+    margin: 20px 0;
+    color: #2e5730; /* Verde oscuro militar */
 }
 
-th {
-    background-color: #333;
+header p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #2e5730; /* Verde oscuro militar */
+}
+
+/* Estilo para el logo */
+header .logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Otros estilos... */
+
+/* Estilo para el footer */
+footer {
+    background-color: #1a75ff;
     color: #fff;
+    padding: 40px 0;
+    text-align: center;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+/* Estilos para secciones */
+section {
+    background-color: #f9f9f9; /* Fondo gris claro para las secciones */
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+/* Estilos para las imágenes */
+section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
 }

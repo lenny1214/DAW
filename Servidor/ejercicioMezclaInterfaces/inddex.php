@@ -1,8 +1,3 @@
-<?php
-include_once ("conexion.php");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,83 +8,75 @@ include_once ("conexion.php");
 </head>
 <body>
     <header>
-    <nav>
-        <ul>
-            <li><a href="#Inicio">Inicio</a></li>
-            <li><a href="#Barcos">Barcos</a></li>
-            <li><a href="#Contacto">Contacto</a></li>
-            <li><a href="#Nosotros">Sobre nosotros</a></li>
-        </ul>
-    </nav>
-
-    <section>
-    <div id="Inicio">
-        <h1>Bienvenido a nuestra página de inicio</h1>
-        <p>¡Aquí puedes encontrar información sobre nuestros barcos y servicios!</p>
-        <img src="img/images.png" alt="Mi gente estamo en japon">
-    </div>
-
-    <div id="Barcos">
-    </div>
-
-    <div id="Contacto">
-    </div>
-
-    <div id="Nosotros">
-    </div>
-</secton>
+        <nav>
+            <ul>
+                <li><a href="#Inicio">Inicio</a></li>
+                <li><a href="#Barcos">Barcos</a></li>
+                <li><a href="#Contacto">Contacto</a></li>
+                <li><a href="#Nosotros">Sobre nosotros</a></li>
+            </ul>
+        </nav>
+        <section class="header-content">
+            <h1>Bienvenido a Barquitos</h1>
+            <p>Tu fuente confiable de información sobre barcos y batallas históricas.</p>
+        </section>
     </header>
 
 
-  <section>
-    <div id="inicio">
-        <h1>Inicio</h1>
-        <p>Esto es texto de barcos</p>
-        <img src = "img/images.png" alt="foto2">
-      </section>
+</body>
+</html>
 
-      <section>
-      <?php
-    include_once ("consultas.php");
 
-    
-    mostrarC2($resultado2);
-
-    ?>
-
+    <section>
+        <div id="inicio">
+            <h1>Inicio</h1>
+            <p>Descubre la fascinante historia de los barcos de guerra.</p>
+            <img src="img/images.png" alt="Barcos de guerra">
+        </div>
     </section>
 
     <section>
-
-    <?php
-
-    
-    mostrarC3($resultado3);
-
-    ?>
+        <h2>Encontrar aquellos países que dispongan tanto de acorazados como
+de cruceros.</h2>
+        <?php
+        include_once("consultas.php");
+        mostrarC2($resultado2);
+        ?>
     </section>
 
- 
     <section>
+        <h2>Encontrar aquellas batallas en las cuales un mismo país participo con
+al menos tres barcos.
+</h2>
+        <?php
+        mostrarC3($resultado3);
+        ?>
+    </section>
 
-<?php
+    <section>
+        <h2>Encontrar los países cuyos barcos tengan el mayor número de
+cañones.</h2>
+        <?php
+        mostrarC4($resultado4);
+        ?>
+    </section>
 
-
-mostrarC4($resultado4);
-
-?>
-</section>
-
-
-    
-
-
-
-
-
-
-
-
-
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                
+                <p>Barquitos es una empresa especializada en la historia y los barcos de guerra. Proporcionamos información detallada sobre los barcos y batallas más importantes a lo largo de la historia.</p>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contacto</h2>
+                <p><i class="fas fa-envelope"></i> Correo: info@barquitos.com</p>
+                <p><i class="fas fa-phone"></i> Teléfono: +123 456 789</p>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 Barquitos | Desarrollado por Lenny
+        </div>
+    </footer>
 </body>
 </html>
