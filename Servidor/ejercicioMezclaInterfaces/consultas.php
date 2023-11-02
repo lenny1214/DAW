@@ -19,18 +19,25 @@ $resultado = mysqli_query( $conexion, $consulta1 ) or die ( "Algo ha ido mal en 
 */
 
     $consulta2= "SELECT DISTINCT PAIS FROM CLASES WHERE TIPO='ACORAZADO' AND PAIS IN(SELECT PAIS FROM CLASES WHERE TIPO='CRUCERO')";
-
 	$resultado2 = mysqli_query( $conexion, $consulta2 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
-	echo "<table border='1'";
-    echo "<tr><th>PAIS</th></tr>";
-    if ($resultado2){
+	
+    function mostrarC2 ($resultado2){
+    echo "<table border='1'";
+    echo "<tr>";
+    echo "<th>PAIS</th>";
+    echo "</tr>";
+    
+    
         while($fila=mysqli_fetch_assoc($resultado2)){
-            echo "<tr><th>" . $fila['PAIS'] . "</tr></tr>";
-        }
+            echo "<tr>";
+            echo "<th>" . $fila['País'] . "</th>";
+            echo "</tr>";
+        
     }
-	// Motrar el resultado de los registro de la base de datos
-	
-	
+
+}
+echo "</table>";
+
 
 //ESTO SE SUPONE QUE VA A SER LA CONSULTA 3
 
@@ -43,15 +50,19 @@ GROUP BY B.NOMBRE_BATALLA, CL.PAIS)AS BatallasPorPais
 WHERE num_barcos >=3 ";
 
 $resultado3 = mysqli_query( $conexion, $consulta3 ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+
+    function mostrarC3($resultado3){
 	echo "<table border='1'";
-    echo "<tr><th>Nombre Batalla</th></tr>";
-    if ($resultado3){
+    echo "<tr>";
+    echo "<th>Nombre Batalla</th>";
+    echo "</tr>";
+    
         while($fila=mysqli_fetch_assoc($resultado3)){
             echo "<tr><th>" . $fila['Nombre Batalla'] . "</tr></tr>";
-        }
+        
     }
-
-
+}
+echo "</table>";
 
 
 
@@ -60,9 +71,22 @@ FROM CLASES
 GROUP BY PAIS)AS PaisesConMaxCaniones
 JOIN CLASES ON PaisesConMaxCanCaniones.PAIS AND PaisesConMaxCaniones.max_caniones=CLASES";
 
-$resultado2=mysqli_query( $conexion, $consulta4) or die ("No funciona la conexión a la consulta");
+$resultado4=mysqli_query( $conexion, $consulta4) or die ("No funciona la conexión a la consulta");
 
+function mostrarC4($resultado4){
+    echo "<table border='1'";
+    echo "<tr>";
+    echo "<th>Países con mayor número de camiones</th>";
+    echo "</tr>";
 
+    while($fila=mysqli_fetch_assoc($resultado4)){
+        echo "<tr><th>" . $fila['Nombre Batalla'] . "</tr></tr>";
+    
+}
+
+}
+
+echo "</table>";
 
 $consulta5="";
   

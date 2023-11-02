@@ -1,3 +1,7 @@
+<?php
+include_once ("conexion.php");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,17 +48,39 @@
         <img src = "img/images.png" alt="foto2">
       </section>
 
+      <section>
       <?php
-    
     include_once ("consultas.php");
+
     
+    mostrarC2($resultado2);
+
+    ?>
+
+    </section>
+
+    <section>
+
+    <?php
+
+    
+    mostrarC3($resultado3);
+
+    ?>
+    </section>
+
+ 
+    <section>
+
+<?php
 
 
-
+mostrarC4($resultado4);
 
 ?>
+</section>
 
-     
+
     
 
 
