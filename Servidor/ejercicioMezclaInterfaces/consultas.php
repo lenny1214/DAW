@@ -48,15 +48,23 @@ function mostrarC2($resultado2)
     echo '</div>';
 }
 
-$consulta3 = "SELECT NOMBRE_BATALLA
+$consulta3 = "SELECT B1.PAIS, B2.NOMBRE_BATALLA
 FROM (
-  SELECT B.NOMBRE_BATALLA, CL.PAIS, COUNT(DISTINCT BC.NOMBRE_BARCO) AS num_barcos
-  FROM BATALLAS B
-  JOIN BARCO_CLASE BC ON B.NOMBRE_BATALLA = BC.NOMBRE_BARCO
-  JOIN CLASES CL ON BC.CLASE = CL.CLASE
-  GROUP BY B.NOMBRE_BATALLA, CL.PAIS
-) AS BatallasPorPais
-WHERE num_barcos >= 3;";
+    SELECT R.NOMBRE_BARCO, C.PAIS, R.NOMBRE_BATALLA
+    FROM RESULTADOS R
+    INNER JOIN BARCO_CLASE BC ON R.NOMBRE_BARCO = BC.NOMBRE_BARCO
+    INNER JOIN CLASES C ON BC.CLASE = C.CLASE
+) B1
+INNER JOIN (
+    SELECT C.PAIS, R.NOMBRE_BATALLA, COUNT(*) AS NUM_BARCOS
+    FROM RESULTADOS R
+    INNER JOIN BARCO_CLASE BC ON R.NOMBRE_BARCO = BC.NOMBRE_BARCO
+    INNER JOIN CLASES C ON BC.CLASE = C.CLASE
+    GROUP BY C.PAIS, R.NOMBRE_BATALLA
+    HAVING COUNT(*) >= 3
+) B2
+ON B1.PAIS = B2.PAIS AND B1.NOMBRE_BATALLA = B2.NOMBRE_BATALLA;";
+
 $resultado3 = mysqli_query($conexion, $consulta3) or die("Algo ha ido mal en la consulta a la base de datos");
 
 function mostrarC3($resultado3)
@@ -69,7 +77,7 @@ function mostrarC3($resultado3)
 
     while ($fila = mysqli_fetch_assoc($resultado3)) {
         echo '<tr>';
-        echo '<td>' . $fila['Nombre Batalla'] . '</td>';
+        echo '<td>' . $fila['NOMBRE_BATALLA'] . '</td>';
         echo '</tr>';
     }
 
