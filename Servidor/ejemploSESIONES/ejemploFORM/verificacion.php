@@ -22,6 +22,6 @@ if (!isset($_SESSION['usuario'])) {
 <body>
     <h1>Bienvenido, <?php echo $_SESSION['usuario']; ?>!</h1>
     <p>Este es el contenido protegido.</p>
-    <a href="cerrar_sesion.php">Cerrar Sesión</a>
+    <a href="ejemploFROM.php">Cerrar Sesión</a>
 </body>
 </html>
