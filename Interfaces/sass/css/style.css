@@ -1,0 +1,5 @@
+@import url("../scss/components/_margen.scss");
+@import url("../scss/components/headder.scss");
+body {
+  color: red;
+}

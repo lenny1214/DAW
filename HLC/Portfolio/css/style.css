@@ -1,3 +1,14 @@
+/*Mobile FIRST*/
+/*#contenedor{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+}*/
+
+
+
+
 body {
     margin: 0;
     padding: 0;
