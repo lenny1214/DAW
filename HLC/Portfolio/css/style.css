@@ -1,10 +1,68 @@
-/*Mobile FIRST*/
-/*#contenedor{
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-}*/
+/* PARA DISPOSITIVOS MÓVILES */
+@media only screen and (max-width: 767px) {
+    .imginicio,
+    .imgtablet {
+      display: none; /* Ocultar la imagen para tabletas, ordenadores e iPad en dispositivos móviles */
+    }
+  
+    .imgmovil {
+      display: block; /* Mostrar la imagen específica para móviles en dispositivos móviles */
+    }
+  }
+  
+  /* PARA TABLETS */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .imgmovil,
+    .imginicio {
+      display: none; /* Ocultar la imagen específica para móviles y la imagen para tabletas en tabletas e iPad */
+    }
+  
+    .imgtablet {
+      display: block; /* Mostrar la imagen del iPad en tabletas */
+    }
+  }
+  /* PARA ORDENADORES */
+  @media only screen and (min-width: 1024px) {
+    .imgmovil,
+    .imgtablet {
+      display: none;
+    }
+
+    .imginicio {
+      width: 70%;
+      height: auto;
+      margin: 0 auto;
+      position: relative; /* Para que los divs internos sean relativos a este contenedor */
+    }
+
+    .boton {
+      position: absolute;
+      cursor: pointer;
+    }
+
+    /* Posicionamiento de los botones dentro de la imagen del monitor */
+    .boton1 {
+      top: 20%;
+      left: 30%;
+    }
+
+    .boton2 {
+      top: 50%;
+      left: 15%;
+    }
+
+    .boton3 {
+      top: 50%;
+      left: 50%;
+    }
+
+    .boton4 {
+      top: 80%;
+      left: 70%;
+    }
+  }
+  
+
 
 
 body {
