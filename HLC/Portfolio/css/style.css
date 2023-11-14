@@ -77,6 +77,18 @@ body {
     margin: 0;
   }
   
+  body {
+    background-image: url('../img/bg.jpg'); /* Ruta de tu imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.contenedor {
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
   
   .boton{
               text-align:center;
@@ -84,7 +96,7 @@ body {
         font-family: 'Helvetica Neue', Helvetica, sans-serif;
         display:inline-block;
               color: #FFF;
-              background: #7F8C8D;
+              background: #207c83;
               padding: 15px 30px;
               white-space: nowrap;
               -webkit-border-radius: 5px;
@@ -98,33 +110,7 @@ body {
               transition: all 0.2s ease-in-out;
   }
         
-  .azul{
-    background: #3498DB;
-  }
-  
-  .azul:hover{
-    background: #2980B9;
-  }
-  
-  .verde{
-    background: #2ECC71;
-  }
-  
-  .verde:hover{
-    background: #27AE60;
-  }
-  
-  .rojo{
-    background: #E74C3C;
-  }
-  
-  .rojo:hover{
-    background: #C0392B;
-  }
-  
-  .naranja{
-    background: #2ce622;
-  }
+ 
   
 
   main {
@@ -138,7 +124,7 @@ body {
 
 header {
     background-color: #333;
-    color: #fff;
+    color: #0d0868;
     text-align: center;
     padding: 10px;
 }
@@ -146,14 +132,14 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    background-color: #eee;
+    background-color: #516be8;
     padding: 10px;
 }
 
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #333;
+    color: #042084;
 }
 
 footer{background-color: #333; 
