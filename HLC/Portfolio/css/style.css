@@ -1,72 +1,82 @@
-/* PARA DISPOSITIVOS MÓVILES */
-@media only screen and (max-width: 767px) {
-    .imginicio,
-    .imgtablet {
-      display: none; /* Ocultar la imagen para tabletas, ordenadores e iPad en dispositivos móviles */
-    }
-  
-    .imgmovil {
-      display: block; /* Mostrar la imagen específica para móviles en dispositivos móviles */
-    }
-  }
-  
-  /* PARA TABLETS */
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .imgmovil,
-    .imginicio {
-      display: none; /* Ocultar la imagen específica para móviles y la imagen para tabletas en tabletas e iPad */
-    }
-  
-    .imgtablet {
-      display: block; /* Mostrar la imagen del iPad en tabletas */
-    }
-  }
-/* PARA ORDENADORES */
-@media only screen and (min-width: 1024px) {
-    .imgmovil,
-    .imgtablet {
-      display: none;
-    }
-
-    .imginicio {
-      width: 70%;
-      height: auto;
-      margin: 0 auto;
-      position: relative; /* Para que los divs internos sean relativos a este contenedor */
-    }
-
-    .boton {
-      position: absolute;
-      cursor: pointer;
-      background-color: #3498DB;
-      color: #fff;
-      padding: 10px;
-      border-radius: 5px;
-      text-align: center;
-      font-size: 16px;
-    }
-
-    /* Posicionamiento de los botones dentro de la imagen del monitor */
-    .boton1 {
-      top: 20%;
-      left: 30%;
-    }
-
-    .boton2 {
-      top: 50%;
-      left: 15%;
-    }
-
-    .boton3 {
-      top: 50%;
-      left: 50%;
-    }
-
-    .boton4 {
-      top: 80%;
-      left: 70%;
-    }
+.centrado{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
+.onOf{
+  opacity: 5;
+  
+}
+.Pie{
+  width: 800px;
+}
+#glugla{
+  background-color: gray;
+}
+/* Estilos para teléfonos (hasta 767px) */
+@media only screen and (max-width: 767px) {
+ 
+
+  .glugla2{
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      width: 230px;
+      border: 20px solid transparent;
+      border-image: url('../img/ds.png') 30 round; 
+      box-sizing: border-box;
+      border-radius: 30px;
+  }
+  .Pie{
+      display: none;
+  }
+}
+
+/*Pantalla de ORDENADOR*/
+@media only screen and (min-width: 1025px){
+  .glugla2{
+
+      height: 500px;
+      width: 800px;
+      border: 20px solid transparent;
+      border-image: url('../img/Pantalla.png') 30 round; 
+      box-sizing: border-box;
+      border-radius: 30px;
+      
+  }
+  #botones{
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      display: none;
+      justify-content: space-around;
+  }
+  .glugla2 button{
+      height: 80px;
+      width: 20%;
+  }
+}
+
+/* Estilos para tablets (entre 768px y 1024px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .glugla2{
+      display: flex;
+      flex-direction: column;
+      height: 400px;
+      width: 500px;
+      border: 20px solid transparent;
+      border-image: url('../img/Tablet2.png') 30 round; 
+      box-sizing: border-box;
+      border-radius: 30px;
+
+  }
+  .Pie{
+      display: none;
+  }
+}
+
 
 
 
@@ -87,31 +97,24 @@ body {
   
   background-size: cover;
   background-repeat: no-repeat;
+  height: max-content;
+  width: 1000px;  
 }
 
-  
-  .boton{
-              text-align:center;
-              text-decoration: none;
-        font-family: 'Helvetica Neue', Helvetica, sans-serif;
-        display:inline-block;
-              color: #FFF;
-              background: #207c83;
-              padding: 15px 30px;
-              white-space: nowrap;
-              -webkit-border-radius: 5px;
-              -moz-border-radius: 5px;
-              border-radius: 5px;
-              margin: 10px 5px;
-              -webkit-transition: all 0.2s ease-in-out;
-              -ms-transition: all 0.2s ease-in-out;
-              -moz-transition: all 0.2s ease-in-out;
-              -o-transition: all 0.2s ease-in-out;
-              transition: all 0.2s ease-in-out;
-  }
-        
- 
-  
+.imginicio{
+  height: auto;
+  width: 100%;
+}
+
+.imgtablet{
+  height: auto;
+  width: 100%;
+}
+.imgmovil{
+  height: auto;
+  width: 100%;
+}
+
 
   main {
     flex: 1;

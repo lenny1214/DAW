@@ -36,15 +36,31 @@
       <a href="#">Contacto</a>
   </nav>  
   <main>
-    <div class="contenedor">
-      <img src="../img/monitor.png" alt="Imagen Monitor" class="imginicio imgordenador">
-      <div class="boton boton1">Sobre mí</div>
-      <div class="boton boton2">Habilidades</div>
-      <div class="boton boton3">Experiencia</div>
-      <div class="boton boton4">Contactos</div>
-    <img src="../img/tablet.png" alt="Imagen Tablet" class="imginicio imgtablet">
-    <img src="../img/movil (2).png" alt="Imagen Tablet" class="imginicio imgmovil">
+    <div class="centrado">
+      <button onclick="onOff()" class="onOf">
+          Encender/apagar
+      </button>
+      <section class="glugla2" id="glugla">
+          <div id="botones">
+              <button onclick="cambiarColor('blue')">
+                  Sobre mí
+              </button>
+              <button onclick="cambiarColor('red')">
+                  Experiencia
+              </button>
+              <button onclick="cambiarColor('cyan')">
+                  Habilidades
+              </button>
+              <button onclick="cambiarColor('pink')">
+                  Contacto
+              </button>
+          </div>
+
+      </section>
+      <img src="../img/pie1.png" alt="" class="Pie" id="onOff">
+      <img src="../img/pie2.png" alt="" class="Pie">
   </div>
+
 
   </main>
   <footer>
