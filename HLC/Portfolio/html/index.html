@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,65 +10,62 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../css/bootstrap.css"></link>
   <link rel="stylesheet" href="../css/style.css"></link>
   <script defer src="../js/js.js"></script>
-  
+
 </head>
 
 <body>
   <header>
-      <h1>Portfolio Ignacio</h1>
+    <h1>Portfolio Ignacio</h1>
   </header>
-  
+
   <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Sobre Mí</a>
-      <a href="#">Experiencia</a>
-      <a href="#">Habilidades</a>
-      <a href="#">Contacto</a>
-  </nav>  
+    <a href="#">Inicio</a>
+    <a href="sobreMi.html">Sobre Mí</a> <!-- Enlace a sobreMi.html -->
+    <a href="experiencia.html">Experiencia</a>
+    <a href="habilidades.html">Habilidades</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
   <main>
     <div class="centrado">
       <button onclick="onOff()" class="onOf">
-          Encender/apagar
+        On/Off
       </button>
       <section class="glugla2" id="glugla">
-          <div id="botones">
-              <button onclick="cambiarColor('blue')">
-                  Sobre mí
-              </button>
-              <button onclick="cambiarColor('red')">
-                  Experiencia
-              </button>
-              <button onclick="cambiarColor('cyan')">
-                  Habilidades
-              </button>
-              <button onclick="cambiarColor('pink')">
-                  Contacto
-              </button>
-          </div>
+        <div id="botones">
+          <button onclick="cambiarColor('blue'); window.location.href='sobreMi.html';">
+            Sobre mí
+          </button>
+          <button onclick="cambiarColor('red')">
+            Experiencia
+          </button>
+          <button onclick="cambiarColor('cyan')">
+            Habilidades
+          </button>
+          <button onclick="cambiarColor('pink')">
+            Contacto
+          </button>
+        </div>
 
       </section>
       <img src="../img/pie1.png" alt="" class="Pie" id="onOff">
       <img src="../img/pie2.png" alt="" class="Pie">
-  </div>
-
+    </div>
 
   </main>
   <footer>
     <div>
       Términos Legales | © 2023 Mi Sitio Web
-    </div>  
+    </div>
   </footer>
-  
+
 </body>
 
 </html>

@@ -22,6 +22,15 @@ function onOff(){
         cambiarColor("gray");
         botones.style.display="none";
     }
+
+    //Para que cuando esté en la página de sobre mí no se pueda apagar la pantalla
+
+    if(estado=="green"){
+        onOff.style.backgroundColor = estado;
+        cambiarColor("white");
+    }
     
 }
+
+
 
