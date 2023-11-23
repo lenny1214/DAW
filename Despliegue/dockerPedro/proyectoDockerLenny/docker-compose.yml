@@ -1,0 +1,33 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    volumes:
+ 
+
+    build:
+      context: .
+      dockerfile: dockerfile
+    environment:
+      - MYSQL_ALLOW_PASSWORD=YES
+      - MYSQL_ROOT_PASSWORD= ""
+      - MYSQL_DATABASE= testdocker
+
+    ports: 
+    - "3307 : 3306"
+
+
+  php:
+    build: 
+    context: .
+    dockerfile: dockerfile
+  ports: 
+  - "80:80"
+  depends_on: 
+  - mysql
+
+
+
+

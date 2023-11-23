@@ -1,0 +1,20 @@
+DROP DATABASE IF EXISTS TESTDOCKER;
+CREATE DATABASE TESTDOCKER;
+USE TESTDOCKER;
+
+
+-- Crear la tabla PERSONA
+CREATE TABLE PERSONA (
+    ID INT PRIMARY KEY NOT NULL,
+    NOMBRE VARCHAR(100),
+    APELLIDOS VARCHAR(100)
+);
+
+-- Insertar datos en la tabla PERSONA
+INSERT INTO PERSONA (ID, NOMBRE, APELLIDOS) VALUES
+(1, 'Juan', 'Pérez'),
+(2, 'María', 'Gómez'),
+(3, 'Carlos', 'Rodríguez');
+
+-- Consultar los datos de la tabla PERSONA
+SELECT * FROM PERSONA;
