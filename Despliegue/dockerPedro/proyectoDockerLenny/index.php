@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>TestDocker</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,14 +30,15 @@
 
 
 // Datos de conexión a la base de datos
-$host = 'localhost'; // Puede ser 'localhost' si la base de datos está en el mismo servidor
-$dbname = 'testdocker';
+$host = 'mysql'; // Puede ser 'localhost' si la base de datos está en el mismo servidor
+$dbname = 'TESTDOCKER';
 $username = 'root';
 $password = '';
+$port= 3306;
 
 
 // Crear una conexión a la base de datos
-$conn = new mysqli($host, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $dbname,$port);
 
 
 // Verificar la conexión
