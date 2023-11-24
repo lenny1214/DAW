@@ -87,18 +87,6 @@ if ($result->num_rows > 0) {
 $conn->close();
 
 
-/*
-mysql:
-  image: mysql:latest
-  ports:
-    - "3307:3306"
-  environment:
-    - MYSQL_ALLOW_EMPTY_PASSWORD=YES
-    - MYSQL_ROOT_PASSWORD =""
-    - MYSQL_DATABASE=testingdocker
-
-
-*/
 
 
 ?>
