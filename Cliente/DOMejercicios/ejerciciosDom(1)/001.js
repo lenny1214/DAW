@@ -203,13 +203,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
-
-
-
-
-
 /*010- Usando JavaScript, selecciona el primer elemento li dentro de la
 lista y muestra en la consola su nodeType, nodeName y tagName.*/
 
