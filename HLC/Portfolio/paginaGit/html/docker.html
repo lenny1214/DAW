@@ -18,166 +18,184 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js.js"></script>
+
 </head>
 
 <body class="d-flex flex-column align-items-center justify-content-center text-center vh-100">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">Inicio</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    <div class="container">
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">Inicio</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="git.html">Git</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="docker.html">Docker</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="flex-grow-1">
+            <section id="gitContent" class="container mt-3">
+                <h1 class="mb-3">Docker Compose</h1>
+                <button onclick="cambiarColor('git')" type="button">
+                    Cambiar color de Git
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="git.html">Git</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="docker.html">Docker</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <main class="flex-grow-1">
-        <section id="gitContent" class="container mt-4">
-            <h1>Docker Compose</h1>
-
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <!-- Card 1 -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Introducción a Docker:</h5>
-                            <p class="card-text">Docker es una plataforma de código abierto que permite la creación,
-                                implementación y ejecución de aplicaciones en contenedores. Los contenedores son
-                                entornos ligeros y portátiles que encapsulan las dependencias de una aplicación y
-                                garantizan su ejecución sin importar el entorno subyacente.</p>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <!-- Card 1 -->
+                    <div id="git1" class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Control de Versiones</h5>
+                                <p class="card-text">Git permite a los desarrolladores llevar un registro de los cambios
+                                    en su código fuente a lo largo del tiempo.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Arquitectura de Docker:</h5>
-                            <p class="card-text">La arquitectura de Docker se basa en el concepto de contenedores, que
-                                son instancias ejecutables de imágenes. Docker utiliza un daemon para gestionar la
-                                construcción, ejecución y distribución de contenedores. Además, cuenta con un cliente
-                                que permite a los usuarios interactuar con el daemon y gestionar sus contenedores.</p>
+                    <!-- Card 2 -->
+                    <div id="git2" class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Distribuido</h5>
+                                <p class="card-text">Es un sistema de control de versiones distribuido, lo que significa
+                                    que cada desarrollador tiene una copia completa del historial del proyecto en su
+                                    máquina local.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 3 -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Imágenes en Docker:</h5>
-                            <p class="card-text">Las imágenes de Docker son la base de los contenedores. Una imagen es
-                                una representación inmutable de un entorno y una aplicación, incluidas todas sus
-                                dependencias. Estas imágenes se utilizan para crear contenedores en tiempo de
-                                ejecución..</p>
+                    <!-- Card 3 -->
+                    <div id="git3" class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Imágenes en Docker:</h5>
+                                <p class="card-text">Las imágenes de Docker son la base de los contenedores. Una imagen
+                                    es
+                                    una representación inmutable de un entorno y una aplicación, incluidas todas sus
+                                    dependencias. Estas imágenes se utilizan para crear contenedores en tiempo de
+                                    ejecución..</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-                <!-- Card 4 -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Contenedores y Virtualización:</h5>
-                            <p class="card-text">A diferencia de la virtualización tradicional, Docker utiliza
-                                contenedores que comparten el mismo núcleo del sistema operativo host, pero se ejecutan
-                                de manera aislada. Esto hace que los contenedores sean más eficientes en términos de
-                                recursos y rápidos para implementar.</p>
+                    <!-- Card 4 -->
+                    <div id="git4" class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Contenedores y Virtualización:</h5>
+                                <p class="card-text">A diferencia de la virtualización tradicional, Docker utiliza
+                                    contenedores que comparten el mismo núcleo del sistema operativo host, pero se
+                                    ejecutan
+                                    de manera aislada. Esto hace que los contenedores sean más eficientes en términos de
+                                    recursos y rápidos para implementar.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 5 -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Docker Compose:</h5>
-                            <p class="card-text">Docker Compose es una herramienta que permite definir y gestionar
-                                aplicaciones Docker multicontenedor. Con un archivo YAML, puedes describir la
-                                configuración de tu aplicación, incluidos servicios, redes y volúmenes, y luego utilizar
-                                un solo comando para iniciar y ejecutar toda la aplicación.</p>
+                    <!-- Card 5 -->
+                    <div id="git5" class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Docker Compose:</h5>
+                                <p class="card-text">Docker Compose es una herramienta que permite definir y gestionar
+                                    aplicaciones Docker multicontenedor. Con un archivo YAML, puedes describir la
+                                    configuración de tu aplicación, incluidos servicios, redes y volúmenes, y luego
+                                    utilizar
+                                    un solo comando para iniciar y ejecutar toda la aplicación.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-                <!-- Card 6 -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Orquestación con Docker Swarm:</h5>
-                            <p class="card-text">Docker Swarm es una herramienta de orquestación incorporada en Docker
-                                que permite la gestión de clústeres de contenedores. Facilita la implementación,
-                                actualización y escala de aplicaciones distribuidas en un entorno de contenedores.</p>
+                    <!-- Card 6 -->
+                    <div id="git6" class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Orquestación con Docker Swarm:</h5>
+                                <p class="card-text">Docker Swarm es una herramienta de orquestación incorporada en
+                                    Docker
+                                    que permite la gestión de clústeres de contenedores. Facilita la implementación,
+                                    actualización y escala de aplicaciones distribuidas en un entorno de contenedores.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 7 -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Docker Hub y Registros:</h5>
-                            <p class="card-text">Docker Hub es un servicio en la nube que proporciona almacenamiento de
-                                imágenes de Docker y colaboración entre desarrolladores. Los registros de Docker, como
-                                Docker Hub, son repositorios que almacenan y distribuyen imágenes de contenedores para
-                                su uso en diferentes entornos.</p>
+                    <!-- Card 7 -->
+                    <div id="git7" class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Docker Hub y Registros:</h5>
+                                <p class="card-text">Docker Hub es un servicio en la nube que proporciona almacenamiento
+                                    de
+                                    imágenes de Docker y colaboración entre desarrolladores. Los registros de Docker,
+                                    como
+                                    Docker Hub, son repositorios que almacenan y distribuyen imágenes de contenedores
+                                    para
+                                    su uso en diferentes entornos.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-                <!-- Card 8 -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Seguridad en Docker:</h5>
-                            <p class="card-text">Docker ofrece características de seguridad incorporadas, como
-                                aislamiento de contenedores, control de acceso basado en roles (RBAC), y la posibilidad
-                                de firmar y verificar imágenes. Estas medidas garantizan entornos de contenedores
-                                seguros y fiables.</p>
+                    <!-- Card 8 -->
+                    <div id="git8" class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Seguridad en Docker:</h5>
+                                <p class="card-text">Docker ofrece características de seguridad incorporadas, como
+                                    aislamiento de contenedores, control de acceso basado en roles (RBAC), y la
+                                    posibilidad
+                                    de firmar y verificar imágenes. Estas medidas garantizan entornos de contenedores
+                                    seguros y fiables.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Card 9 -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Casos de Uso y Ventajas:</h5>
-                            <p class="card-text">Docker es ampliamente utilizado en el desarrollo y despliegue de
-                                aplicaciones, facilitando la implementación consistente y eficiente en diferentes
-                                entornos. Sus ventajas incluyen la portabilidad, escalabilidad, eficiencia de recursos y
-                                facilita la adopción de enfoques de arquitectura basados en microservicios.</p>
+                    <!-- Card 9 -->
+                    <div id="git9" class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Casos de Uso y Ventajas:</h5>
+                                <p class="card-text">Docker es ampliamente utilizado en el desarrollo y despliegue de
+                                    aplicaciones, facilitando la implementación consistente y eficiente en diferentes
+                                    entornos. Sus ventajas incluyen la portabilidad, escalabilidad, eficiencia de
+                                    recursos y
+                                    facilita la adopción de enfoques de arquitectura basados en microservicios.</p>
+                            </div>
                         </div>
                     </div>
+
+
+
+
+
                 </div>
+            </section>
+    </div>
 
-
-
-
-
-            </div>
-        </section>
     </main>
-        <footer class="footer mt-auto py-3 bg-light">
-            <div class="container text-center">
-                <span class="text-muted">© 2024 Contenido Oficial de Lenny</span>
-            </div>
-        </footer>
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 Contenido Oficial de Lenny</span>
+        </div>
+    </footer>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

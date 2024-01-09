@@ -1,10 +1,33 @@
 body {
-    margin-bottom: 70px; /* Ajusta según sea necesario */
-    padding-top: 56px;
+    padding-top: 56px; /* Tamaño del navbar en dispositivos móviles */
 }
 
-body {
-    overflow: auto;
+@media (max-width: 576px) {
+    .navbar-toggler {
+        position: absolute;
+        right: 0;
+    }
+
+    .navbar-collapse {
+        display: none;
+        position: absolute;
+        top: 56px; /* Tamaño del navbar en dispositivos móviles */
+        width: 100%;
+        background-color: #f8f9fa; /* Color de fondo del navbar en dispositivos móviles */
+    }
+
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
 }
 
 main {
@@ -15,8 +38,6 @@ main {
     width: 100%;
     height: 50%;
 }
-
-
 
 
 #Git a.btn-primary {
@@ -47,7 +68,13 @@ main {
 
 
 
+#gitSection {
+    background-color: #ffc107; /* Puedes cambiar este color según tus preferencias */
+}
 
+#dockerSection {
+    background-color: #28a745; /* Puedes cambiar este color según tus preferencias */
+}
 
 
 
