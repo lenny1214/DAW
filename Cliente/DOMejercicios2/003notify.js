@@ -1,6 +1,9 @@
+"use strict"
+
+
 function showWindow(options) {
     // Configuración predeterminada
-    const defaultOptions = {
+    let defaultOptions = {
       top: 0,
       right: 0,
       html: "Default Window",
@@ -8,10 +11,10 @@ function showWindow(options) {
     };
   
     // Combinar las opciones proporcionadas con las predeterminadas
-    const windowOptions = Object.assign({}, defaultOptions, options);
+    let windowOptions = Object.assign({}, defaultOptions, options);
   
     // Crear el elemento de ventana
-    const windowElement = document.createElement("div");
+    let windowElement = document.createElement("div");
     windowElement.className = "showWindow " + windowOptions.className;
     windowElement.style.top = windowOptions.top + "px";
     windowElement.style.right = windowOptions.right + "px";
