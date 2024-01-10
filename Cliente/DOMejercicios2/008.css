@@ -1,0 +1,14 @@
+.message {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+/* Estilo del botón de cierre */
+.closeButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}

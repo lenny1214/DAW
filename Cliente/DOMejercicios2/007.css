@@ -1,0 +1,19 @@
+#menu {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .expanded {
+    max-height: 200px; /* o la altura que desees */
+  }
+
+  #menu.expanded ul {
+    display: block; /* Asegúrate de que la lista se muestre cuando el menú está expandido */
+  }
+  
+  #menu.expanded {
+    max-height: 200px; /* o la altura que desees */
+    transition: max-height 0.3s ease-in-out;
+  }
+  
