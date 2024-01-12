@@ -101,6 +101,9 @@
             alert('El resultado es: ' + resultado);
         }
     </script>
+     <footer class="bg-dark text-light text-center p-3 fixed-bottom">
+        <p>&copy; 2024 Lennty. Todos los derechos reservados.</p>
+    </footer>
 </body>
 
 </html>
