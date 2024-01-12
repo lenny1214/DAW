@@ -24,6 +24,6 @@ services:
       dockerfile: php.Dockerfile
     ports:
       - "80:80"
-    depends_on:
-      - mysql
+   
+      
 
