@@ -1,0 +1,12 @@
+ 
+    #editableDiv {
+        border: 1px solid #ccc;
+        padding: 10px;
+        cursor: text;
+      }
+  
+      #editableTextarea {
+        display: none;
+        width: 100%;
+        height: 100px;
+      }
