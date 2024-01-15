@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/versión/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../Act4_Interfaces/style.css">
+
+    <script src="../Act4_Interfaces/js.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=inicializarMapa" async defer></script>
+
+    <title>Consulting</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="../Act4_Interfaces/img/logo.jpg" alt="Logo" width="30" height="30"
+                class="d-inline-block align-top">
+            Consulting
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-icons">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4 text-center">
+        <h1>Bienvenido a Consulting</h1>
+        <p class="lead">Tu socio en soluciones informáticas, marketing y más. Estamos aquí para ayudarte. ¡Contáctanos para obtener asesoramiento directo!</p>
+
+        <!-- Información de la empresa -->
+        <div class="row">
+            <div class="col-md-6">
+                <div id="map"></div>
+            </div>
+            <div class="col-md-6">
+                <h3>Nuestra Ubicación</h3>
+                <p>Calle Luis de Morales 15, Sevilla</p>
+            </div>
+        </div>
+
+
+        <!-- Imágenes con cambio al pasar el ratón -->
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <img id="imagen1" src="../Act4_Interfaces/img/img1.jpg" alt="Imagen 1" class="img-fluid img-hover">
+            </div>
+            <div class="col-md-4">
+                <img id= "imagen2"src="../Act4_Interfaces/img/img2.jpg" alt="Imagen 2" class="img-fluid img-hover">
+            </div>
+            <div class="col-md-4">
+                <img id= "imagen3" src="../Act4_Interfaces/img/img3.jpg" alt="Imagen 3" class="img-fluid img-hover">
+            </div>
+        </div>
+
+
+
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="nombre">Nombre <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="nombre" name="nombre">
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="asunto">Asunto</label>
+                <input type="text" class="form-control" id="asunto" name="asunto">
+            </div>
+
+            <div class="form-group">
+                <label for="comentario">Comentario <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="comentario" name="comentario" rows="5"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="validarFormulario()">Enviar</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
