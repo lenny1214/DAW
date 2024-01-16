@@ -1,42 +1,34 @@
-"use strict"
+"use strict";
+"use strict";
 
-function inicializarMapa() {
-    let ubicacion = { lat: 42.60003, lng: -5.57032 }; // Coordenadas de ejemplo
-    let mapa = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: ubicacion
-    });
+function generarSumaAleatoria() {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
 
-    let marcador = new google.maps.Marker({
-        position: ubicacion,
-        map: mapa
-    });
+    $("#sumaAleatoriaGenerada").text(`${num1} + ${num2}`);
+    $("#num1").text(num1);
+    $("#num2").text(num2);
 }
 
-function validarFormulario() {
-    let nombre = $("#nombre").val();
-    let email = $("#email").val();
-    let comentario = $("#comentario").val();
+function verificarSumaYEnviar() {
 
-    // Validar campos obligatorios, utilizamos el (trim) para validar que el usuario no añade solo espacios en blanco
-    if (nombre.trim() === "") {
-        alert("Por favor, ingresa tu nombre.");
+    const sumaGenerada = $("#sumaAleatoriaGenerada").text();
+    const sumaIngresada = $("#sumaAleatoria").val();
+
+    if (sumaIngresada.trim() !== sumaGenerada.replace(/\s+/g, '')) {
+        mostrarError("#sumaAleatoria", "La suma ingresada es incorrecta.");
         return;
     }
 
-    if (email.trim() === "") {
-        alert("Por favor, ingresa tu correo electrónico.");
+    if (!$("#politicaPrivacidad").prop("checked")) {
+        mostrarError("#politicaPrivacidad", "Debes aceptar la política de privacidad.");
         return;
     }
 
-    if (comentario.trim() === "") {
-        alert("Por favor, ingresa un comentario.");
-        return;
-    }
     $("#contactForm").submit();
-    alert("Mensaje enviado con éxito")
-
+    alert("Mensaje enviado con éxito");
 }
+
 
 $(document).ready(function () {
     $("#imagen1").hover(
@@ -65,4 +57,11 @@ $(document).ready(function () {
             $(this).attr("src", "../Act4_Interfaces/img/img3.jpg");
         }
     );
+});
+
+$(document).ready(function () {
+    // ... tu código existente
+
+    // Llamar a la función para generar la suma aleatoria
+    generarSumaAleatoria();
 });

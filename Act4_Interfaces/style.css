@@ -1,3 +1,27 @@
+/* Imágenes más pequeñas en las pantallas pequeñas */
+@media (max-width: 768px) {
+    #imagen1, #imagen2, #imagen3 {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Imágenes más pequeñas en las pantallas medianas */
+@media (min-width: 769px) and (max-width: 992px) {
+    #imagen1, #imagen2, #imagen3 {
+        max-width: 80%;
+        height: auto;
+    }
+}
+
+/* Imágenes más pequeñas en las pantallas grandes */
+@media (min-width: 993px) {
+    #imagen1, #imagen2, #imagen3 {
+        max-width: 60%;
+        height: auto;
+    }
+}
+
 #map {
     height: 400px;
     width: 100%;
