@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -128,60 +128,89 @@
                 class="img-fluid img-hover border p-3 border-dark">
         </div>
     </div>
-    
+
     <!-- Formulario -->
     <div class="container mt-4">
-        <form id="contactForm" novalidate>
+        <form id="contactForm" action="procesaform.php" method="post" novalidate>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="nombre">Nombre <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    <input type="text" class="form-control campo-resaltado" id="nombre" name="nombre" required>
                     <small id="nombreError" class="invalid-feedback">Por favor, ingresa tu nombre.</small>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido">
+                    <input type="text" class="form-control campo-resaltado" id="apellido" name="apellido">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="email">Email <span class="text-danger">*</span></label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control campo-resaltado" id="email" name="email" required>
                 <small id="emailError" class="invalid-feedback">Por favor, ingresa tu correo electrónico.</small>
             </div>
 
             <div class="form-group">
                 <label for="asunto">Asunto</label>
-                <input type="text" class="form-control" id="asunto" name="asunto">
+                <input type="text" class="form-control campo-resaltado" id="asunto" name="asunto">
             </div>
 
             <div class="form-group">
                 <label for="comentario">Comentario <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="comentario" name="comentario" rows="5" required></textarea>
+                <textarea class="form-control campo-resaltado" id="comentario" name="comentario" rows="5"
+                    required></textarea>
                 <small id="comentarioError" class="invalid-feedback">Por favor, ingresa un comentario.</small>
             </div>
 
-            <div class="form-group">
+            <div class="">
                 <label for="sumaAleatoria">Realiza la suma: <span id="num1"></span> + <span id="num2"></span> =
-                    <input type="text" class="form-control" id="sumaAleatoria" name="sumaAleatoria" required>
+                    <input type="text" class="form-control campo-resaltado" id="sumaAleatoria" name="sumaAleatoria"
+                        required>
                 </label>
-                <span id="resultadoIcon"></span> <!-- Nuevo elemento para mostrar el icono -->
+                <span id="resultadoIcon"></span>
                 <small id="sumaAleatoriaError" class="invalid-feedback">La suma ingresada es incorrecta.</small>
             </div>
 
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="politicaPrivacidad" required>
+                <input type="checkbox" class="form-check-input campo-resaltado" id="politicaPrivacidad" required>
                 <label class="form-check-label" for="politicaPrivacidad">Acepto la política de privacidad <span
                         class="text-danger">*</span></label>
                 <small id="politicaPrivacidadError" class="invalid-feedback">Debes aceptar la política de
                     privacidad.</small>
             </div>
 
-            <button type="button" class="btn btn-primary" onclick="verificarSumaYEnviar()">Enviar</button>
+            <button id="mensajeRecibido" type="button" class="btn btn-primary"
+                onclick="verificarSumaYEnviar()">Enviar</button>
         </form>
     </div>
 
 
+
 </body>
 
+<footer>
+    <!-- Bloque 1 -->
+    <div class="col-md-4">
+        <div class="bloque-enlaces">
+            <h4>Título del Bloque 1</h4>
+            <div class="enlaces">
+                <a href="#servicio1">Servicio 1</a>
+                <a href="#servicio2">Servicio 2</a>
+                <!-- Agregar más enlaces según sea necesario -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bloque 2 -->
+    <div class="col-md-4">
+        <div class="bloque-enlaces">
+            <h4>Título del Bloque 2</h4>
+            <div class="enlaces">
+                <a href="#pagina1">Página 1</a>
+                <a href="#pagina2">Página 2</a>
+                <!-- Agregar más enlaces según sea necesario -->
+            </div>
+        </div>
+    </div>
+</footer>
 </html>

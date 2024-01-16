@@ -36,3 +36,8 @@
 }
 
 
+.campo-resaltado {
+    border: 2px solid rgb(131, 183, 250);  /* Color: LightBlue */
+    outline: none;  /* Eliminar el contorno predeterminado del campo */
+}
+
