@@ -11,8 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/versión/jquery.min.js"></script>
-
     <link rel="stylesheet" href="../Act4_Interfaces/style.css">
 
     <script src="../Act4_Interfaces/js.js"></script>
@@ -78,10 +76,10 @@
             <div class="card">
                 <div class="card-header" id="infoHeader">
                     <h5 class="mb-0">
-                        <buttonclass= btn btn-link type="button" data-toggle="collapse" data-target="#infoCollapse"
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#infoCollapse"
                             aria-expanded="true" aria-controls="infoCollapse">
                             Ver detalles de ubicación
-                        </buttonclass=>
+                        </button>
                     </h5>
                 </div>
 
@@ -131,16 +129,15 @@
                 class="img-fluid img-hover border p-3 border-dark">
         </div>
     </div>
+    
     <!-- Formulario -->
     <div class="container mt-4">
         <form id="contactForm" novalidate>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="nombre">Nombre <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="nombre" name="nombre">
-
-                    <!-- Mostramos el mensaje de validación -->
-                    <small class="invalid-feedback">Por favor, ingresa tu nombre.</small>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    <small id="nombreError" class="invalid-feedback">Por favor, ingresa tu nombre.</small>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="apellido">Apellido</label>
@@ -150,8 +147,8 @@
 
             <div class="form-group">
                 <label for="email">Email <span class="text-danger">*</span></label>
-                <input type="email" class="form-control" id="email" name="email">
-                <small class="invalid-feedback">Por favor, ingresa tu correo electrónico.</small>
+                <input type="email" class="form-control" id="email" name="email" required>
+                <small id="emailError" class="invalid-feedback">Por favor, ingresa tu correo electrónico.</small>
             </div>
 
             <div class="form-group">
@@ -161,31 +158,24 @@
 
             <div class="form-group">
                 <label for="comentario">Comentario <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="comentario" name="comentario" rows="5"></textarea>
-                <small class="invalid-feedback">Por favor, ingresa un comentario.</small>
+                <textarea class="form-control" id="comentario" name="comentario" rows="5" required></textarea>
+                <small id="comentarioError" class="invalid-feedback">Por favor, ingresa un comentario.</small>
             </div>
 
-            <!-- Campo para la suma aleatoria -->
             <div class="form-group">
-                <label for="sumaAleatoria">Realiza la suma: <span id="sumaAleatoriaGenerada"></span> +
-                    <span id="num1"></span> + <span id="num2"></span> =
-                    <input type="text" class="form-control" id="sumaAleatoria" name="sumaAleatoria">
+                <label for="sumaAleatoria">Realiza la suma: <span id="num1"></span> + <span id="num2"></span> =
+                    <input type="text" class="form-control" id="sumaAleatoria" name="sumaAleatoria" required>
                 </label>
-
-                <!-- Mostramos el mensaje de validación -->
                 <small id="sumaAleatoriaError" class="invalid-feedback">La suma ingresada es incorrecta.</small>
             </div>
 
-            <!-- Campo para la aceptación de la política de privacidad -->
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="politicaPrivacidad" required>
                 <label class="form-check-label" for="politicaPrivacidad">Acepto la política de privacidad <span
                         class="text-danger">*</span></label>
-                <!-- Mostramos el mensaje de validación -->
                 <small id="politicaPrivacidadError" class="invalid-feedback">Debes aceptar la política de
                     privacidad.</small>
             </div>
-
 
             <button type="button" class="btn btn-primary" onclick="verificarSumaYEnviar()">Enviar</button>
         </form>
