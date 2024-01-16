@@ -1,8 +1,30 @@
 "use strict";
 
+
+
+$(document).ready(function () {
+    // Agregar evento click a los botones del acordeón
+    $(".card-header button").click(function () {
+        // Obtener el collapse asociado al botón clickeado
+        let collapseId = $(this).data("target");
+        let collapseElement = $(collapseId);
+
+        // Cerrar todos los demás elementos del acordeón
+        $(".collapse").not(collapseElement).slideUp();
+
+        // Abrir o cerrar el elemento clickeado
+        collapseElement.slideToggle();
+
+        // Marcar el botón como activo o inactivo
+        $(".card-header button").not(this).addClass("collapsed");
+        $(this).toggleClass("collapsed");
+    });
+});
+
+
         function generarSumaAleatoria() {
-            const num1 = Math.floor(Math.random() * 10) + 1;
-            const num2 = Math.floor(Math.random() * 10) + 1;
+            let num1 = Math.floor(Math.random() * 10) + 1;
+            let num2 = Math.floor(Math.random() * 10) + 1;
 
             $("#num1").text(num1);
             $("#num2").text(num2);
@@ -15,7 +37,7 @@
                 return;
             }
 
-            const sumaIngresada = parseInt($("#sumaAleatoria").val());
+            let sumaIngresada = parseInt($("#sumaAleatoria").val());
 
             if (!esSumaCorrecta(sumaIngresada)) {
                 mostrarError("#sumaAleatoria", "La suma ingresada es incorrecta.");
@@ -91,3 +113,46 @@
                 }
             );
         });
+
+        $(document).ready(function () {
+    // ... (Tu código existente)
+
+    // Agregar evento keyup al campo de sumaAleatoria
+    $("#sumaAleatoria").keyup(function () {
+        verificarResultado();
+    });
+
+    // ... (Tu código existente)
+});
+
+function verificarResultado() {
+    limpiarErrores();
+
+    let sumaIngresada = parseInt($("#sumaAleatoria").val());
+
+    if (!isNaN(sumaIngresada)) {
+        if (esSumaCorrecta(sumaIngresada)) {
+            mostrarIcono("fa-check", "green");
+        } else {
+            mostrarIcono("fa-times", "red");
+        }
+    } else {
+        limpiarIcono();
+    }
+}
+
+function mostrarIcono(iconClass, color) {
+    // Eliminar el icono anterior si lo hay
+    limpiarIcono();
+
+    // Crear un nuevo elemento para el icono
+    let iconElement = $(`<i class="fas ${iconClass}" style="color: ${color};"></i>`);
+
+    // Agregar el icono al contenedor adecuado
+    $("#sumaAleatoria").after(iconElement);
+}
+
+function limpiarIcono() {
+    // Eliminar cualquier icono existente
+    $("#sumaAleatoria").next("i").remove();
+}
