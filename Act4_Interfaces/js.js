@@ -13,15 +13,7 @@ $(document).ready(function () {
         $(this).toggleClass("collapsed");
     });
 
-    // Imágenes con cambio al pasar el ratón
-    $("#imagen1, #imagen2, #imagen3").hover(
-        function () {
-            $(this).attr("src", `../Act4_Interfaces/img/cambio${$(this).attr("id").slice(-1)}.jpg`);
-        },
-        function () {
-            $(this).attr("src", `../Act4_Interfaces/img/img${$(this).attr("id").slice(-1)}.jpg`);
-        }
-    );
+   
 
     // Validar suma mientras se escribe
     $("#sumaAleatoria").keyup(function () {
@@ -217,3 +209,5 @@ $("#mensajeRecibido").click(function () {
     generarSumaAleatoria();
     verificarSumaYEnviar();
 });
+
+$("#miFooter").prepend('<div id="nuevoElemento" class="nuevo-elemento"><p>Este es el enlace para la gente Prime</p></div>');

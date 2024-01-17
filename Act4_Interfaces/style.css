@@ -46,7 +46,14 @@
 }
 
 #miFooter {
-    background-color: rgb(131, 183, 250);; /* Código de color para azul claro */
+    background-color: rgb(131, 183, 250); /* Código de color para azul claro */
     color: #000000; /* Código de color para negro */
     padding: 20px 0; /* Ajusta el relleno según sea necesario */
+}
+
+.nuevo-elemento {
+    background-color: rgb(72, 146, 243); /* Azul claro */
+    color: #000; /* Texto negro */
+    padding: 10px;
+    margin-bottom: 10px;
 }
