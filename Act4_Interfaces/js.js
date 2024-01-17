@@ -1,27 +1,78 @@
 "use strict";
 
-
-
 $(document).ready(function () {
-    // Agregar evento click a los botones del acordeón
+    // Acordeón
     $(".card-header button").click(function () {
-        // Obtener el collapse asociado al botón clickeado
         let collapseId = $(this).data("target");
         let collapseElement = $(collapseId);
 
-        // Cerrar todos los demás elementos del acordeón
         $(".collapse").not(collapseElement).slideUp();
-
-        // Abrir o cerrar el elemento clickeado
         collapseElement.slideToggle();
 
-        // Marcar el botón como activo o inactivo
         $(".card-header button").not(this).addClass("collapsed");
         $(this).toggleClass("collapsed");
     });
+
+    // Imágenes con cambio al pasar el ratón
+    $("#imagen1, #imagen2, #imagen3").hover(
+        function () {
+            $(this).attr("src", `../Act4_Interfaces/img/cambio${$(this).attr("id").slice(-1)}.jpg`);
+        },
+        function () {
+            $(this).attr("src", `../Act4_Interfaces/img/img${$(this).attr("id").slice(-1)}.jpg`);
+        }
+    );
+
+    // Validar suma mientras se escribe
+    $("#sumaAleatoria").keyup(function () {
+        verificarResultado();
+    });
+
+    // Mostrar gradualmente el formulario al cargar la página
+    $("#contactForm").hide().slideDown(1000);
+
+    // Eventos focusin y focusout para resaltar campos
+    $("#nombre, #apellido, #email, #asunto, #comentario, #num1").on({
+        focusin: function () {
+            resaltarCampo($(this));
+        },
+        focusout: function () {
+            quitarResaltadoCampo($(this));
+        }
+    });
+
+    // Enviar formulario al hacer clic en el botón
+    $("#enviarBtn").click(function () {
+        enviarFormulario();
+    });
+
+    // Efecto fadeIn para bloques de enlaces
+    $(".bloque-enlaces").fadeIn(1000);
+
+    // Scroll suave al hacer clic en enlaces internos
+    $("#enlaces").click(function (event) {
+        event.preventDefault();
+
+        let targetSection = $(this).attr("href");
+
+        $("html, body").animate({
+            scrollTop: $(targetSection).offset().top
+        }, 1000);
+
+        $(targetSection).animate({ backgroundColor: "#ffffcc" }, 500).animate({ backgroundColor: "#fafafa" }, 500);
+    });
+
+    // Controlador de eventos al cambio de tamaño de la ventana
+    $(window).resize(function () {
+        console.log("La ventana ha cambiado de tamaño");
+    });
+
+    // Establecer atributos de la imagen con id "imagen1"
+    $("#imagen1").attr({
+        "alt": "Nueva descripción de la imagen",
+        "title": "Imagen mejorada"
+    });
 });
-
-
 
 function generarSumaAleatoria() {
     let num1 = Math.floor(Math.random() * 10) + 1;
@@ -38,7 +89,6 @@ function verificarSumaYEnviar() {
         return;
     }
 
-    //Función val implementada
     let sumaIngresada = parseInt($("#sumaAleatoria").val());
 
     if (!esSumaCorrecta(sumaIngresada)) {
@@ -85,49 +135,6 @@ function limpiarErrores() {
     $("#sumaAleatoriaError, #politicaPrivacidadError").text("");
 }
 
-$(document).ready(function () {
-    generarSumaAleatoria();
-
-    
-    $("#imagen1").hover (
-        function () {
-            $(this).attr("src", "../Act4_Interfaces/img/cambioimg1.jpg");
-        },
-        function () {
-            $(this).attr("src", "../Act4_Interfaces/img/img1.jpg");
-        }
-    );
-
-    $("#imagen2").hover(
-        function () {
-            $(this).attr("src", "../Act4_Interfaces/img/cambioimg2.jpg");
-        },
-        function () {
-            $(this).attr("src", "../Act4_Interfaces/img/img2.jpg");
-        }
-    );
-
-    $("#imagen3").hover(
-        function () {
-            $(this).attr("src", "../Act4_Interfaces/img/cambioimg3.jpg");
-        },
-        function () {
-            $(this).attr("src", "../Act4_Interfaces/img/img3.jpg");
-        }
-    );
-});
-
-$(document).ready(function () {
-    // ... (Tu código existente)
-
-    // Agregar evento keyup al campo de sumaAleatoria
-    $("#sumaAleatoria").keyup(function () {
-        verificarResultado();
-    });
-
-    // ... (Tu código existente)
-});
-
 function verificarResultado() {
     limpiarErrores();
 
@@ -145,206 +152,68 @@ function verificarResultado() {
 }
 
 function mostrarIcono(iconClass, color) {
-    // Eliminar el icono anterior si lo hay
     limpiarIcono();
 
-    // Crear un nuevo elemento para el icono
     let iconElement = $(`<i class="fas ${iconClass}" style="color: ${color};"></i>`);
-
-    // Agregar el icono al contenedor adecuado
     $("#sumaAleatoria").after(iconElement);
 }
 
 function limpiarIcono() {
-    // Eliminar cualquier icono existente
     $("#sumaAleatoria").next("i").remove();
 }
 
-$(document).ready(function () {
-    // ... (Tu código existente)
-
-    // Agregar evento click al botón de enviar
-    $("#enviarBtn").click(function () {
-        enviarFormulario();
-    });
-});
-
 function enviarFormulario() {
-    // Limpiar errores antes de enviar
     limpiarErrores();
 
-    // Validar campos antes de enviar
     if (!camposObligatoriosCompletos()) {
         return;
     }
 
-    // Obtener datos del formulario
     let formData = $("#contactForm").serialize();
 
-    // Enviar datos al servidor mediante AJAX
     $.ajax({
-        url: "procesar_formulario.php",
+        url: "procesaform.php",
         type: "POST",
         data: formData,
         success: function (response) {
-            // Mostrar el mensaje recibido
             $("#mensajeRecibido").html(response);
-
-            // Limpiar los datos del formulario
             $("#contactForm")[0].reset();
-
-            // Ocultar el formulario con un efecto de deslizamiento
             $("#contactForm").slideUp("slow", function () {
                 // Acciones a realizar después de ocultar el formulario (si es necesario)
             });
         },
         error: function (error) {
-            // Manejar errores
             console.error("Error en la solicitud AJAX: ", error);
-
-            // Mostrar mensaje de error al usuario
             alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");
         }
     });
 }
 
-$(document).ready(function () {
-    // Ocultar el formulario al principio
-    $("#contactForm").hide();
-
-    // Mostrar gradualmente el formulario cuando la página se carga
-    $("#contactForm").slideDown(1000); // Puedes ajustar la duración según tu preferencia
-
-    // Agregar evento click a los botones del acordeón
-    $(".card-header button").click(function () {
-       
-
-        // Cerrar todos los demás elementos del acordeón
-        $(".collapse").not(collapseElement).slideUp();
-
-        // Abrir o cerrar el elemento clickeado
-        collapseElement.slideToggle();
-
-        // Marcar el botón como activo o inactivo
-        $(".card-header button").not(this).addClass("collapsed");
-        $(this).toggleClass("collapsed");
-    });
-});
-
-$(document).ready(function () {
-    // ... Tu código existente
-
-    // Agregar eventos focusin y focusout al campo de nombre
-    $("#nombre").focusin(function () {
-        resaltarCampo("#nombre");
-    });
-
-    $("#nombre").focusout(function () {
-        quitarResaltadoCampo("#nombre");
-    });
-
-    // Agregar eventos focusin y focusout al campo de apellido
-    $("#apellido").focusin(function () {
-        resaltarCampo("#apellido");
-    });
-
-    $("#apellido").focusout(function () {
-        quitarResaltadoCampo("#apellido");
-    });
-
-    $("#email").focusin(function () {
-        resaltarCampo("#email");
-    });
-
-    $("#email").focusout(function () {
-        quitarResaltadoCampo("#email");
-    });
-
-
-    $("#asunto").focusin(function () {
-        resaltarCampo("#asunto");
-    });
-
-    $("#asunto").focusout(function () {
-        quitarResaltadoCampo("#asunto");
-    });
-
-
-    $("#comentario").focusin(function () {
-        resaltarCampo("#comentario");
-    });
-
-    $("#comentario").focusout(function () {
-        quitarResaltadoCampo("#comentario");
-    });
-
-
-    $("#suma").focusin(function () {
-        resaltarCampo("#num1");
-    });
-
-    $("#suma").focusout(function () {
-        quitarResaltadoCampo("#num1");
-    });
-
-
-    // Agregar evento click al botón de enviar
-    $("#enviarBtn").click(function () {
-        enviarFormulario();
-    });
-});
 
 function resaltarCampo(elemento) {
-    // Agregar una clase de resaltado solo al campo enfocado
-    $(elemento).addClass("campo-resaltado");
+    elemento.addClass("campo-resaltado");
 }
 
 function quitarResaltadoCampo(elemento) {
-    // Eliminar la clase de resaltado solo del campo que perdió el enfoque
-    $(elemento).removeClass("campo-resaltado");
+    elemento.removeClass("campo-resaltado");
 }
+
+
+function generarSumaAleatoria() {
+    let num1 = Math.floor(Math.random() * 10) + 1;
+    let num2 = Math.floor(Math.random() * 10) + 1;
+
+    $("#num1").text(num1);
+    $("#num2").text(num2);
+}
+
+// Llama a la función al cargar la página
 $(document).ready(function () {
-    // Agregar efecto de fadeIn a los bloques de enlaces
-    $(".bloque-enlaces").fadeIn(1000);
-
-    // Agregar evento click a los enlaces internos con efecto de desplazamiento suave
-    $("#enlaces").click(function (event) {
-        // Prevenir el comportamiento predeterminado del enlace
-        event.preventDefault();
-
-        // Obtener el destino del enlace
-        let targetSection = $(this).attr("href");
-
-        // Animar el scroll hacia la sección correspondiente con una duración de 1000ms
-        $("html, body").animate({
-            scrollTop: $(targetSection).offset().top
-        }, 1000);
-
-        // Puedes agregar una animación adicional al elemento destino si lo deseas
-        // Por ejemplo, cambiar su color de fondo durante la animación
-        $(targetSection).animate({ backgroundColor: "#ffffcc" }, 500).animate({ backgroundColor: "#fafafa" }, 500);
-    });
-
-
+    generarSumaAleatoria();
 });
 
-$(document).ready(function () {
-
-    // Agregar un controlador de eventos al cambio de tamaño de la ventana
-    $(window).resize(function () {
-        // Realizar acciones específicas cuando cambia el tamaño de la ventana
-        console.log("La ventana ha cambiado de tamaño");
-
-    });
+// Llama a la función al hacer clic en el botón de enviar
+$("#mensajeRecibido").click(function () {
+    generarSumaAleatoria();
+    verificarSumaYEnviar();
 });
-
-
-
-$(document).ready(function () {
-    // Establecer varios atributos de la imagen con id "imagen1"
-    $("#imagen1").attr({
-        "alt": "Nueva descripción de la imagen",
-        "title": "Imagen mejorada"
-    });
-});
-

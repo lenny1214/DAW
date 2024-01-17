@@ -44,3 +44,9 @@
 .body{
     padding-bottom: 100px;
 }
+
+#miFooter {
+    background-color: rgb(131, 183, 250);; /* Código de color para azul claro */
+    color: #000000; /* Código de color para negro */
+    padding: 20px 0; /* Ajusta el relleno según sea necesario */
+}
