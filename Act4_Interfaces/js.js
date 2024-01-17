@@ -38,6 +38,7 @@ function verificarSumaYEnviar() {
         return;
     }
 
+    //Función val implementada
     let sumaIngresada = parseInt($("#sumaAleatoria").val());
 
     if (!esSumaCorrecta(sumaIngresada)) {
@@ -87,7 +88,8 @@ function limpiarErrores() {
 $(document).ready(function () {
     generarSumaAleatoria();
 
-    $("#imagen1").hover(
+    
+    $("#imagen1").hover (
         function () {
             $(this).attr("src", "../Act4_Interfaces/img/cambioimg1.jpg");
         },
@@ -207,6 +209,29 @@ function enviarFormulario() {
 }
 
 $(document).ready(function () {
+    // Ocultar el formulario al principio
+    $("#contactForm").hide();
+
+    // Mostrar gradualmente el formulario cuando la página se carga
+    $("#contactForm").slideDown(1000); // Puedes ajustar la duración según tu preferencia
+
+    // Agregar evento click a los botones del acordeón
+    $(".card-header button").click(function () {
+       
+
+        // Cerrar todos los demás elementos del acordeón
+        $(".collapse").not(collapseElement).slideUp();
+
+        // Abrir o cerrar el elemento clickeado
+        collapseElement.slideToggle();
+
+        // Marcar el botón como activo o inactivo
+        $(".card-header button").not(this).addClass("collapsed");
+        $(this).toggleClass("collapsed");
+    });
+});
+
+$(document).ready(function () {
     // ... Tu código existente
 
     // Agregar eventos focusin y focusout al campo de nombre
@@ -303,5 +328,23 @@ $(document).ready(function () {
 
 });
 
-//FOOOOOOTTTTEEEERRR
+$(document).ready(function () {
+
+    // Agregar un controlador de eventos al cambio de tamaño de la ventana
+    $(window).resize(function () {
+        // Realizar acciones específicas cuando cambia el tamaño de la ventana
+        console.log("La ventana ha cambiado de tamaño");
+
+    });
+});
+
+
+
+$(document).ready(function () {
+    // Establecer varios atributos de la imagen con id "imagen1"
+    $("#imagen1").attr({
+        "alt": "Nueva descripción de la imagen",
+        "title": "Imagen mejorada"
+    });
+});
 
