@@ -75,6 +75,7 @@ function generarSumaAleatoria() {
 }
 
 function verificarSumaYEnviar() {
+    
     limpiarErrores();
 
     if (!camposObligatoriosCompletos()) {
@@ -88,7 +89,33 @@ function verificarSumaYEnviar() {
         return;
     }
 
-    $("#contactForm")[0].submit();
+
+    $("#contactForm")[0].submit(function(event){event.preventDefault()});
+    
+    limpiarErrores();
+
+    if (!camposObligatoriosCompletos()) {
+        return;
+    }
+
+    let formData = $("#contactForm").serialize();
+
+    $.ajax({
+        url: "procesaform.php",
+        type: "POST",
+        data: formData,
+        success: function (response) {
+            $("#mensajeRecibido").html(response);
+            $("#contactForm")[0].reset();
+            $("#contactForm").slideUp("slow", function () {
+                // Acciones a realizar después de ocultar el formulario (si es necesario)
+            });
+        },
+        error: function (error) {
+            console.error("Error en la solicitud AJAX: ", error);
+            alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+        }
+    });
 }
 
 function camposObligatoriosCompletos() {
@@ -154,32 +181,9 @@ function limpiarIcono() {
     $("#sumaAleatoria").next("i").remove();
 }
 
-function enviarFormulario() {
-    limpiarErrores();
 
-    if (!camposObligatoriosCompletos()) {
-        return;
-    }
 
-    let formData = $("#contactForm").serialize();
 
-    $.ajax({
-        url: "procesaform.php",
-        type: "POST",
-        data: formData,
-        success: function (response) {
-            $("#mensajeRecibido").html(response);
-            $("#contactForm")[0].reset();
-            $("#contactForm").slideUp("slow", function () {
-                // Acciones a realizar después de ocultar el formulario (si es necesario)
-            });
-        },
-        error: function (error) {
-            console.error("Error en la solicitud AJAX: ", error);
-            alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");
-        }
-    });
-}
 
 
 function resaltarCampo(elemento) {
